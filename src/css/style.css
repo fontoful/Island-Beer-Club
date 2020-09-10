@@ -23,10 +23,18 @@ hr {
 	margin: 0 auto;
 }
 
+img {
+	max-width: 100%;
+}
+
 a {
 	text-decoration: none;
 }
 
 iframe {
 	max-width: 100%;
+}
+
+.dropdown-menu a:hover {
+	background: #898d89;
 }
