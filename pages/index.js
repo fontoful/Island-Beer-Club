@@ -1,65 +1,78 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Header from '../components/header'
+import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>Island Beer Club</title>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+			<Header />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+			{/* Main section */}
+			<Container>
+				<Row>
+					<Col lg={6} className='text-center p5 mt-4'>
+						<div className='opening-text mt-3'>
+							<p>
+								We are a bunch of guys who grew up together and
+								love beer. We've all gone off to school, have
+								had successful careers and, in our later life,
+								returned to our home town to reunite and share
+								experiences. We're posting this site to
+								communicate and coordinate with our numerous
+								members worldwide and with potential members
+								wherever they may be. This is for our amusement
+								and entertainment. If you like it please return.
+							</p>
+							<Dropdown.Divider />
+							<p>
+								For Members only. Opt-in here to receive our
+								periodic eGram.
+							</p>
+							<button type='button' className='btn btn-info'>
+								Sign up for our IBC eGram
+							</button>
+							<div className='dropdown-divider'></div>
+						</div>
+					</Col>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+					<Col lg={6} className='mt-4'>
+						<div class='YouTube-video mt-4'>
+							<p>
+								We ARE the Island Beer Club - Founded in 2004
+								CLICK on the picture below to begin "IBC... The
+								Movie."
+							</p>
+							<iframe
+								width='560'
+								height='315'
+								src='https://www.youtube.com/embed/5q_aWSWDn94'
+								frameborder='0'
+								allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+								allowfullscreen
+							></iframe>
+						</div>
+					</Col>
+				</Row>
+			</Container>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+			<section className='disclaimer mt-4'>
+				<Container>
+					<Row>
+						<Col className='text-center mt5 mb4'>
+							<h3>Remember, RULE #1: There ARE no rules.</h3>
+							<p>
+								How does one become a member? Buy a keg of
+								hand-crafter beer.
+							</p>
+						</Col>
+					</Row>
+				</Container>
+			</section>
+		</>
+	)
 }
