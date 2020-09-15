@@ -1,16 +1,41 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Univeral reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	width: 100%;
+	height: 100%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+}
+
+ul {
+	list-style: none;
+}
+
+hr {
+	width: 60%;
+	margin: 0 auto;
+}
+
+img {
+	max-width: 100%;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+iframe {
+	max-width: 100%;
+}
+
+.dropdown-menu a:hover {
+	background: #898d89;
 }
