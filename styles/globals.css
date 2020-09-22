@@ -39,3 +39,7 @@ iframe {
 .dropdown-menu a:hover {
 	background: #898d89;
 }
+
+.main-icon:hover {
+	cursor: pointer;
+}

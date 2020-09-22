@@ -9,7 +9,11 @@ const Header = () => (
 		<Navbar bg='dark' variant='dark' expand='lg'>
 			<Navbar.Brand className='ml-4'>
 				<Link href='/'>
-					<FontAwesomeIcon size='lg' icon={faBeer} />
+					<FontAwesomeIcon
+						size='lg'
+						className='main-icon'
+						icon={faBeer}
+					/>
 				</Link>
 				<Navbar.Text className='ml-3'>Island Beer Club</Navbar.Text>
 			</Navbar.Brand>
