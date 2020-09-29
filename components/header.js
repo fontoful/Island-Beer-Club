@@ -52,8 +52,8 @@ const Header = () => (
 								Founders Day
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/styles'>
-							<NavDropdown.Item href='/styles'>
+						<Link href='/style'>
+							<NavDropdown.Item href='/style'>
 								Styles
 							</NavDropdown.Item>
 						</Link>
