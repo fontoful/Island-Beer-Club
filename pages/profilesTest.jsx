@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import firebase from '../lib/firebase'
 import Head from 'next/head'
 import Navigation from '../components/navbar'
@@ -6,26 +6,44 @@ import Hero from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col, Media, CardGroup, Card } from 'react-bootstrap'
 
-function Profiles({ profilesTest }) {
+function useProfiles() {
+	const [profiles, setProfiles] = useState([])
 
+	useEffect(() => {
+		firebase
+			.firestore()
+			.collection('profilesTest')
+			.onSnapshot((snapshot) => {
+				const newProfiles = snapshot.docs.map((doc) => ({
+					id: doc.id,
+					...doc.data()
+				}))
+				setProfiles(newProfiles)
+			})
+	}, [])
+
+	return profiles
+}
+
+const Profiles = () => {
+	const profiles = useProfiles()
 	return (
 		<>
 			<Head>
 				{/* head */}
 				<title>Island Beer Club | Members</title>
 			</Head>
-			<Navigation />
 			<Hero />
+			<Navigation />
 			<Container>
-				<Row className="fluff">
+			<Row className="fluff">
 					<Media>
 						Upon joining, members get their MSD, which is the date of their keg purchase as it is recorded in the official .
 						After the MSD is the coterie or clan into which each member is associated. It's a group of five to ten members who joined at approximately the same time. The names of each coterie are derived from naval traditions, periodic table elements and a quip to frequent flier or credit card member statuses. See if you can figure it out.
 					</Media>
 				</Row>
-
 				<Row className="row profiles">
-					{profilesTest.map((profile) => (
+					{profiles.map((profile) =>
 						<Col xs="12" md="6" lg="4">
 							<CardGroup>
 								<Card className="profile-card-5">
@@ -39,24 +57,12 @@ function Profiles({ profilesTest }) {
 								</Card>
 							</CardGroup>
 						</Col>
-					))}
-
+					)}
 				</Row>
 			</Container>
 			<Footer />
 		</>
 	)
-}
-
-export const getStaticProps = async () => {
-
-	const snapshot = await firebase.firestore().collection('profilesTest').get()
-	const data = snapshot.docs.map(doc => doc.data())
-	return {
-		props: {
-			profilesTest: data,
-		},
-	}
 }
 
 export default Profiles
