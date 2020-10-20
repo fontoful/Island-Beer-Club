@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Navigation from '../components/navbar'
 import { Container, Row, Col, Dropdown } from 'react-bootstrap'
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 
@@ -15,8 +16,9 @@ export default function Home() {
 				<title>Island Beer Club</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-
+			<Navigation />
 			<Header />
+			
 
 			{/* Main section */}
 			<Container>

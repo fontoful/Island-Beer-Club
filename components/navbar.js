@@ -1,40 +1,34 @@
 import Link from 'next/link'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBeer } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => (
 	<>
-		<Navbar bg='dark' variant='dark' expand='lg' sticky="top">
-			<Navbar.Brand className='ml-4'>
+		<Navbar className='navbar-transparent' align='center' variant='dark' expand='sm' sticky="top">
+
+			<Navbar.Brand className='ml-2'>
 				<Link href='/'>
-					<FontAwesomeIcon
-						size='lg'
-						className='main-icon'
-						icon={faBeer}
-					/>
+					<FontAwesomeIcon size='lg' className='main-icon' icon={faBeer} />
 				</Link>
-				<Navbar.Text className='ml-3'><Link href='/'>Island Beer Club</Link></Navbar.Text>
+				<Navbar.Text className='ml-2'><Link href='/'>Island Beer Club</Link></Navbar.Text>
 			</Navbar.Brand>
+
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
-				<Nav className='navbar-nav ml-auto mr-5'>
+				<Nav className="ml-auto">
 					<Link href='/history'>
 						<Nav.Link href='/history'>History</Nav.Link>
 					</Link>
 					<Link href='/banner-travel'>
 						<Nav.Link href='/banner-travel'>Banner Travel</Nav.Link>
 					</Link>
-					<NavDropdown
-						alignRight
-						title='More'
-						id='basic-nav-dropdown'
-					>
-						<Link href='/profiles'>
-							<NavDropdown.Item href='/profiles'>
-								Profiles
-							</NavDropdown.Item>
-						</Link>
+					<Link href='/profiles'>
+						<Nav.Link href="/profiles">Profiles</Nav.Link>
+					</Link><Link href='/sign-in'>
+						<Nav.Link href="/sign-in">Sign In</Nav.Link>
+					</Link>
+					<NavDropdown title='More' id='basic-nav-dropdown'>
 						<Link href='profiles-form'>
 							<NavDropdown.Item href='/profiles'>
 								Profiles Form

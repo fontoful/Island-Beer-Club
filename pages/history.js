@@ -13,7 +13,7 @@ const History = () => {
 			<Header />
 
 			<Container>
-				<h2 class='text-center my-4'>Island Beer Club History</h2>
+				<h2 className='text-center my-4'>Island Beer Club History</h2>
 				<strong>This page was last updated: 25 June 2020</strong>
 				<Row>
 					<Col lg={6}>
