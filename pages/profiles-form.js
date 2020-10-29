@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/header'
+import Navigation from '../components/navbar'
 import Footer from '../components/footer'
 import { Container, Row, Col, Button, Form, FormControl } from 'react-bootstrap'
 
@@ -11,6 +12,8 @@ const ProfilesForm = () => {
 			</Head>
 
 			<Header />
+
+			<Navigation />
 
 			<Container className='my-4'>
 				<section className='greeting-sec'>

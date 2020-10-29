@@ -19,48 +19,55 @@ export default function Home() {
 			<Navigation />
 			<Header />
 			<Container>
-			<Jumbotron className='negitive center shadow-sm bg-white rounded'>
+				<Jumbotron className='negitive center shadow-sm bg-white rounded'>
 					<Row>
 						<Col>
-							<p className='lead text-center'>Remember, RULE #1: There ARE no rules.</p>
-							<p className='text-center'> How does one become a member? Buy a keg of hand-crafter beer.</p>
+							<p className='lead text-center'>
+								Remember, RULE #1: There ARE no rules.
+							</p>
+							<p className='text-center'>
+								{' '}
+								How does one become a member? Buy a keg of
+								hand-crafter beer.
+							</p>
 						</Col>
 					</Row>
 				</Jumbotron>
 				<section>
-				<Row className='mb-5'>
-					<Col lg={6} className='text-center center p5 my-4'>
-						<div className='opening-text mt-3'>
-							<p>
-								We are a bunch of guys who grew up together and
-								love beer. We've all gone off to school, have
-								had successful careers and, in our later life,
-								returned to our home town to reunite and share
-								experiences. We're posting this site to
-								communicate and coordinate with our numerous
-								members worldwide and with potential members
-								wherever they may be. This is for our amusement
-								and entertainment. If you like it please return.
-							</p>
-						</div>
-					</Col>
+					<Row className='mb-5'>
+						<Col lg={6} className='text-center center p5 my-4'>
+							<div className='opening-text mt-3'>
+								<p>
+									We are a bunch of guys who grew up together
+									and love beer. We've all gone off to school,
+									have had successful careers and, in our
+									later life, returned to our home town to
+									reunite and share experiences. We're posting
+									this site to communicate and coordinate with
+									our numerous members worldwide and with
+									potential members wherever they may be. This
+									is for our amusement and entertainment. If
+									you like it please return.
+								</p>
+							</div>
+						</Col>
 
-					<Col lg={6} className='mt-4'>
-						<div className='YouTube-video mt-4'>
-							<p>
-								We ARE the Island Beer Club - Founded in 2004
-								CLICK on the picture below to begin "IBC... The
-								Movie."
-							</p>
-							<ResponsiveEmbed aspectRatio='16by9'>
-								<embed
-									src='https://www.youtube.com/embed/5q_aWSWDn94'
-									// type='video'
-								/>
-							</ResponsiveEmbed>
-						</div>
-					</Col>
-				</Row>
+						<Col lg={6} className='mt-4'>
+							<div className='YouTube-video mt-4'>
+								<p>
+									We ARE the Island Beer Club - Founded in
+									2004 CLICK on the picture below to begin
+									"IBC... The Movie."
+								</p>
+								<ResponsiveEmbed aspectRatio='16by9'>
+									<embed
+										src='https://www.youtube.com/embed/5q_aWSWDn94'
+										// type='video'
+									/>
+								</ResponsiveEmbed>
+							</div>
+						</Col>
+					</Row>
 				</section>
 			</Container>
 
