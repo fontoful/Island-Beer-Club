@@ -13,8 +13,6 @@ const ProfilesForm = () => {
 
 			<Header />
 
-			<Navigation />
-
 			<Container className='my-4'>
 				<section className='greeting-sec'>
 					<h1 className='text text-primary'>
