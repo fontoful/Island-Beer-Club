@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Navigation from '../components/navbar'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const Links = () => (
@@ -8,6 +9,9 @@ const Links = () => (
 		<Head>
 			<title>Island Beer Club | Links</title>
 		</Head>
+
+		<Navigation />
+
 		<Header />
 
 		<Container className='mt-4'>

@@ -55,7 +55,7 @@ const Profiles = props => {
 	return (
 		<>
 			<Head>
-				<title>Island Beer Club | Member</title>
+				<title>Island Beer Club | Profiles</title>
 			</Head>
 			<Navigation />
 			<Jumbotron fluid align='center' className='page-header'>
@@ -129,21 +129,4 @@ export const getServerSideProps = async ctx => {
 		},
 	}
 }
-
-// export const getStaticProps = async () => {
-// 	const snapshot = await firebase
-// 		.firestore()
-// 		.collection('profilesTest')
-// 		.orderBy('number', 'asc')
-// 		.get()
-
-// 	const data = snapshot.docs.map(doc => doc.data())
-
-// 	return {
-// 		props: {
-// 			profiles: data,
-// 		},
-// 	}
-// }
-
 export default Profiles

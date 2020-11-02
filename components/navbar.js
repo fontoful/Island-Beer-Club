@@ -1,22 +1,33 @@
 import Link from 'next/link'
-import { Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBeer } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => (
 	<>
-		<Navbar className='navbar-transparent' align='center' variant='dark' expand='sm' sticky="top">
-
+		<Navbar
+			className='navbar-transparent'
+			align='center'
+			variant='dark'
+			expand='sm'
+			sticky='top'
+		>
 			<Navbar.Brand className='ml-2'>
 				<Link href='/'>
-					<FontAwesomeIcon size='lg' className='main-icon' icon={faBeer} />
+					<FontAwesomeIcon
+						size='lg'
+						className='main-icon'
+						icon={faBeer}
+					/>
 				</Link>
-				<Navbar.Text className='ml-2'><Link href='/'>Island Beer Club</Link></Navbar.Text>
+				<Navbar.Text className='ml-2'>
+					<Link href='/'>Island Beer Club</Link>
+				</Navbar.Text>
 			</Navbar.Brand>
 
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
-				<Nav className="ml-auto">
+				<Nav className='ml-auto'>
 					<Link href='/history'>
 						<Nav.Link href='/history'>History</Nav.Link>
 					</Link>
@@ -24,11 +35,16 @@ const Navigation = () => (
 						<Nav.Link href='/banner-travel'>Banner Travel</Nav.Link>
 					</Link>
 					<Link href='/profiles'>
-						<Nav.Link href="/profiles">Profiles</Nav.Link>
-					</Link><Link href='/sign-in'>
-						<Nav.Link href="/sign-in">Sign In</Nav.Link>
+						<Nav.Link href='/profiles'>Profiles</Nav.Link>
 					</Link>
-					<NavDropdown title='More' id='basic-nav-dropdown'>
+					<Link href='/sign-in'>
+						<Nav.Link href='/sign-in'>Sign In</Nav.Link>
+					</Link>
+					<NavDropdown
+						alignRight
+						title='More'
+						id='basic-nav-dropdown'
+					>
 						<Link href='profiles-form'>
 							<NavDropdown.Item href='/profiles'>
 								Profiles Form

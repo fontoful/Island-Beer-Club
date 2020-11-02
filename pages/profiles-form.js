@@ -11,6 +11,8 @@ const ProfilesForm = () => {
 				<title>Island Beer Club | Profiles Form</title>
 			</Head>
 
+			<Navigation />
+
 			<Header />
 
 			<Container className='my-4'>

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Navigation from '../components/navbar'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
 const History = () => {
@@ -9,6 +10,8 @@ const History = () => {
 			<Head>
 				<title>Island Beer Club | History</title>
 			</Head>
+
+			<Navigation />
 
 			<Header />
 

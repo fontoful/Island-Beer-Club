@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { Container, Row, Col } from 'react-bootstrap'
+import Navigation from '../components/navbar'
 
 const FoundersDay = () => {
 	return (
@@ -10,6 +11,8 @@ const FoundersDay = () => {
 				{/* head */}
 				<title>Island Beer Club | Founders Day</title>
 			</Head>
+
+			<Navigation />
 
 			<Header />
 

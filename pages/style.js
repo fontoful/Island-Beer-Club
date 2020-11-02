@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Navigation from '../components/navbar'
 
 const Styles = () => {
 	return (
@@ -13,6 +14,8 @@ const Styles = () => {
 				<title>Island Beer Club</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
+
+			<Navigation />
 
 			<Header />
 

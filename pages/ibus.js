@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/header'
+import Navigation from '../components/navbar'
 import Footer from '../components/footer'
 
 const ibus = () => {
@@ -13,6 +14,8 @@ const ibus = () => {
 				<title>Island Beer Club</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
+
+			<Navigation />
 
 			<Header />
 
