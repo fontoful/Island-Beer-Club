@@ -1,10 +1,27 @@
 import Head from 'next/head'
+import { db } from '../lib/firebase'
+
+import { useForm } from 'react-hook-form'
 import Header from '../components/header'
 import Navigation from '../components/navbar'
 import Footer from '../components/footer'
-import { Container, Row, Col, Button, Form, FormControl } from 'react-bootstrap'
+import { Container, Row, Col, Button, Form } from 'react-bootstrap'
 
 const ProfilesForm = () => {
+	const { register, handleSubmit, errors } = useForm()
+
+	const onSubmit = data => {
+		db.collection('profilesTest')
+			.add({
+				...data,
+				is_member: false,
+			})
+			.then(() => {
+				console.log('document was successfully written')
+			})
+			.catch(err => console.log(err))
+	}
+
 	return (
 		<>
 			<Head>
@@ -32,12 +49,14 @@ const ProfilesForm = () => {
 
 				<Row>
 					<Col>
-						<Form>
+						<Form onSubmit={handleSubmit(onSubmit)}>
 							<Form.Row>
 								<Form.Group as={Col} controlId='formGridEmail'>
 									<Form.Label>Email</Form.Label>
 									<Form.Control
 										type='email'
+										name='email'
+										ref={register}
 										placeholder='Enter email'
 									/>
 								</Form.Group>
@@ -46,44 +65,70 @@ const ProfilesForm = () => {
 									as={Col}
 									controlId='formGridPassword'
 								>
-									<Form.Label>Password</Form.Label>
+									<Form.Label>Phone number</Form.Label>
 									<Form.Control
-										type='password'
-										placeholder='Password'
+										type='text'
+										name='phone number'
+										ref={register}
+										placeholder='Phone number'
 									/>
 								</Form.Group>
 							</Form.Row>
 
-							<Form.Group controlId='formGridAddress1'>
-								<Form.Label>Address</Form.Label>
-								<Form.Control placeholder='1234 Main St' />
-							</Form.Group>
-
-							<Form.Group controlId='formGridAddress2'>
-								<Form.Label>Address 2</Form.Label>
-								<Form.Control placeholder='Apartment, studio, or floor' />
-							</Form.Group>
+							<Form.Row>
+								<Form.Group as={Col}>
+									<Form.Label>Name</Form.Label>
+									<Form.Control
+										name='name'
+										ref={register({
+											required: true,
+											minLength: 5,
+										})}
+										placeholder='name'
+									/>
+								</Form.Group>
+								<Form.Group as={Col}>
+									<Form.Label>Likes</Form.Label>
+									<Form.Control
+										as='textarea'
+										size='lg'
+										placeholder='likes'
+										name='likes'
+										ref={register}
+									/>
+								</Form.Group>
+							</Form.Row>
 
 							<Form.Row>
 								<Form.Group as={Col} controlId='formGridCity'>
-									<Form.Label>City</Form.Label>
-									<Form.Control />
+									<Form.Label>Nicknames</Form.Label>
+									<Form.Control
+										name='nicknames'
+										ref={register}
+										as='textarea'
+										size='lg'
+										placeholder='your nicknames...'
+									/>
 								</Form.Group>
 
 								<Form.Group as={Col} controlId='formGridState'>
-									<Form.Label>State</Form.Label>
+									<Form.Label>Hobbies</Form.Label>
 									<Form.Control
-										as='select'
-										defaultValue='Choose...'
-									>
-										<option>Choose...</option>
-										<option>...</option>
-									</Form.Control>
+										name='hobbies'
+										ref={register}
+										as='textarea'
+										size='lg'
+										placeholder='What are your hobbies'
+									></Form.Control>
 								</Form.Group>
 
 								<Form.Group as={Col} controlId='formGridZip'>
 									<Form.Label>Zip</Form.Label>
-									<Form.Control />
+									<Form.Control
+										placeholder='Enter zip'
+										name='zip'
+										ref={register}
+									/>
 								</Form.Group>
 							</Form.Row>
 
@@ -100,6 +145,8 @@ const ProfilesForm = () => {
 						</Form>
 					</Col>
 				</Row>
+
+				{errors.name && <p>The bare minimun is not being met</p>}
 			</Container>
 
 			<Footer />
