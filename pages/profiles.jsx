@@ -71,6 +71,7 @@ const Profiles = props => {
 						<input
 							type='text'
 							name='searchField'
+							placeholder='Search by name...'
 							defaultValue={router.query.search}
 						/>
 						<Button type='submit'>Search</Button>
