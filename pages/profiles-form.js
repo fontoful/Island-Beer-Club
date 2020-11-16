@@ -14,7 +14,7 @@ const ProfilesForm = () => {
 		db.collection('profilesTest')
 			.add({
 				...data,
-				is_member: false,
+				is_member: 'false',
 			})
 			.then(() => {
 				console.log('document was successfully written')
@@ -56,11 +56,10 @@ const ProfilesForm = () => {
 									<Form.Control
 										type='email'
 										name='email'
-										ref={register}
+										ref={register({ required: true })}
 										placeholder='Enter email'
 									/>
 								</Form.Group>
-
 								<Form.Group
 									as={Col}
 									controlId='formGridPassword'
@@ -69,7 +68,7 @@ const ProfilesForm = () => {
 									<Form.Control
 										type='text'
 										name='phone number'
-										ref={register}
+										ref={register({ required: true })}
 										placeholder='Phone number'
 									/>
 								</Form.Group>
@@ -77,15 +76,21 @@ const ProfilesForm = () => {
 
 							<Form.Row>
 								<Form.Group as={Col}>
-									<Form.Label>Name</Form.Label>
+									<Form.Label>Sponsor</Form.Label>
 									<Form.Control
-										name='name'
-										ref={register({
-											required: true,
-											minLength: 5,
-										})}
-										placeholder='name'
-									/>
+										type='text'
+										name='sponsor'
+										ref={register({ required: true })}
+									></Form.Control>
+								</Form.Group>
+								<Form.Group as={Col}>
+									<Form.Label>Other Category</Form.Label>
+									<Form.Control
+										type='textarea'
+										size='lg'
+										name='other'
+										ref={register}
+									></Form.Control>
 								</Form.Group>
 								<Form.Group as={Col}>
 									<Form.Label>Likes</Form.Label>
@@ -94,8 +99,30 @@ const ProfilesForm = () => {
 										size='lg'
 										placeholder='likes'
 										name='likes'
-										ref={register}
+										ref={register({ required: true })}
 									/>
+								</Form.Group>
+							</Form.Row>
+
+							<Form.Row>
+								<Form.Group as={Col}>
+									<Form.Label>First name</Form.Label>
+									<Form.Control
+										type='text'
+										name='firstName'
+										ref={register({
+											required: true,
+											minLength: 5,
+										})}
+									/>
+								</Form.Group>
+								<Form.Group as={Col}>
+									<Form.Label>Last name</Form.Label>
+									<Form.Control
+										type='text'
+										ref={register}
+										name='lastName'
+									></Form.Control>
 								</Form.Group>
 							</Form.Row>
 
@@ -104,7 +131,7 @@ const ProfilesForm = () => {
 									<Form.Label>Nicknames</Form.Label>
 									<Form.Control
 										name='nicknames'
-										ref={register}
+										ref={register({ required: true })}
 										as='textarea'
 										size='lg'
 										placeholder='your nicknames...'
@@ -115,7 +142,7 @@ const ProfilesForm = () => {
 									<Form.Label>Hobbies</Form.Label>
 									<Form.Control
 										name='hobbies'
-										ref={register}
+										ref={register({ required: true })}
 										as='textarea'
 										size='lg'
 										placeholder='What are your hobbies'
@@ -127,26 +154,16 @@ const ProfilesForm = () => {
 									<Form.Control
 										placeholder='Enter zip'
 										name='zip'
-										ref={register}
+										ref={register({ required: true })}
 									/>
 								</Form.Group>
 							</Form.Row>
-
-							<Form.Group id='formGridCheckbox'>
-								<Form.Check
-									type='checkbox'
-									label='Check me out'
-								/>
-							</Form.Group>
-
 							<Button variant='primary' type='submit'>
 								Submit
 							</Button>
 						</Form>
 					</Col>
 				</Row>
-
-				{errors.name && <p>The bare minimun is not being met</p>}
 			</Container>
 
 			<Footer />

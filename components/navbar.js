@@ -31,7 +31,7 @@ const Navigation = () => (
 					<Link href='/history'>
 						<Nav.Link href='/history'>History</Nav.Link>
 					</Link>
-					<Link href='/banner-travel'>
+					<Link href='#'>
 						<Nav.Link href='/banner-travel'>Banner Travel</Nav.Link>
 					</Link>
 					<Link href='/profiles'>
@@ -50,7 +50,7 @@ const Navigation = () => (
 								Profiles Form
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/stats'>
+						<Link href='#'>
 							<NavDropdown.Item href='/stats'>
 								Stats
 							</NavDropdown.Item>
@@ -61,12 +61,12 @@ const Navigation = () => (
 								Founders Day
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/style'>
+						<Link href='#'>
 							<NavDropdown.Item href='/style'>
 								Styles
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/ibus'>
+						<Link href='#'>
 							<NavDropdown.Item href='/ibus'>
 								IBUs
 							</NavDropdown.Item>
@@ -76,15 +76,15 @@ const Navigation = () => (
 								Links
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/pdfs'>
+						<Link href='#'>
 							<NavDropdown.Item href='/pdfs'>
 								PDFs
 							</NavDropdown.Item>
 						</Link>
-						<Link href='/fun'>
+						<Link href='#'>
 							<NavDropdown.Item href='/fun'>Fun</NavDropdown.Item>
 						</Link>
-						<Link href='/contact'>
+						<Link href='#'>
 							<NavDropdown.Item href='/contact'>
 								Contact
 							</NavDropdown.Item>
