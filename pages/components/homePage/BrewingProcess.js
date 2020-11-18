@@ -8,16 +8,19 @@ import Row from 'react-bootstrap/Row'
 const BrewingProcess = () => (
     <>
     <Container fluid className='d-flex flex-row justify-content-center section'>
-        <Row className='flex-row justify-content-center flex-grow-1'>
-            <Col className='d-flex flex-column justify-content-center align-items-center'>
-            <Image src='/Hop.jpg' className='mx-auto d-block' fluid style={{ width: '50%' }} />
+
+        <Row className='flex-row justify-content-center flex-grow-1 py-5'>
+            <Col lg={6} xs={12} className='d-flex flex-column justify-content-center align-items-center'>
+                <Image src='/Hop.png' className='mx-auto d-block my-3' style={{ maxWidth: '50%', height: 'auto' }} />
             </Col>
-            <Col className='d-flex flex-column justify-content-center align-items-center bg-light'>
-            <p className='display-4 text-center'>Brewing Process and Beer Styles...</p>
-            <p className='h4 text-center mb-3'>Want to learn from the experts? Visit the link below for an illustrative presentation on the brewing process.</p>
-            <Button variant='primary' className='text-center' size='xxl'>Read More</Button>
+            <Col lg={6} xs={12} className='d-flex flex-column justify-content-center align-items-center py-3'>
+                <p className='display-4 text-center'>Brewing Process and Beer Styles...</p>
+                <p className='h4 text-center mb-3'>
+                    Want to learn from the experts? Visit the link below for an illustrative presentation on the brewing process.</p>
+                <Button variant='outline-primary' className='text-center mt-3' size='xxl'>Read More</Button>
             </Col>
         </Row>
+
     </Container>
     </>
 )

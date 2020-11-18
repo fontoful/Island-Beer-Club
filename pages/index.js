@@ -16,7 +16,7 @@ export default function Home() {
     <>
     <Head>
         <title>Island Beer Club</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/beer-solid.svg" /> 
       </Head>
       
 

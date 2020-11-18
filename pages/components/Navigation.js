@@ -10,21 +10,21 @@ const Navigation = () => (
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className='justify-content-center'>
-    <Link href='/dynamic-scss' passHref>
-						<Nav.Link>Dynamic SCSS</Nav.Link>
+    <Link href='/history' passHref>
+						<Nav.Link>History</Nav.Link>
 					</Link>
-      <Nav.Link href="#profiles">Profiles</Nav.Link>
-      <NavDropdown title="More" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action">Something</NavDropdown.Item>
+      <Nav.Link href="#profiles"><del>Profiles</del></Nav.Link>
+      <NavDropdown title={<del>More</del>} id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action"><del>Action</del></NavDropdown.Item>
+        <NavDropdown.Item href="#action"><del>Another action</del></NavDropdown.Item>
+        <NavDropdown.Item href="#action"><del>Something</del></NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4"><del>Separated link</del></NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Nav className='flex-fill justify-content-end'>
-      <Nav.Link href="#login">Login In</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">Notifications</Nav.Link>
+      <Nav.Link href="#login"><del>Login In</del></Nav.Link>
+      <Nav.Link eventKey={2} href="#memes"><del>Notifications</del></Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

@@ -8,7 +8,7 @@ const Footer = () => (
         <Container fluid className='bg-dark'>
             <Row className='justify-content-center align-content-center text-light'>
                 <Col className='d-flex justify-content-center align-content-center'>
-                <Image src='/IBCLogo.png' fluid className='mx-auto' style={{ width: '50%' }} />
+                <Image src='/IBCLogo.png' fluid className='mx-auto my-4' style={{ width: '50%' }} />
                 </Col>
                 <Col className='d-flex flex-row justify-content-center align-items-center'>
                 <p>© 2020 Copyright:</p>

@@ -10,16 +10,14 @@ const Header = () => {
     return (
   <>
 	<Container fluid className='main-header'>
-    <Image 
-    className='landing-logo'
-    src='/IBCLogo2.png' />
+    <Image className='landing-logo' src='/IBCLogo2.png' />
     <h3 className='landing__text'>For Members Only</h3>
 
     <Button
         onClick={() => setOpen(!open)}
         aria-controls="fade-text"
         aria-expanded={open}
-        size='lg'
+        size='xxl'
         variant='outline-light'
       >
         Opt-In

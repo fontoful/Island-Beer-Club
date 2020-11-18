@@ -15,7 +15,7 @@ const Intro = () => (
           </Col>
         </Row>
         <Row className='pt-5'>
-            <Col className='d-flex flex-column py-5'>
+            <Col lg={6} xs={12} className='d-flex flex-column py-5'>
                 <div className='d-flex align-self-center'>
                     <FontAwesomeIcon icon={faBeer} size="6x" />
                 </div>
@@ -23,7 +23,7 @@ const Intro = () => (
                     <p> We are a bunch of guys who grew up together and love beer. We've all gone off to school, have had successful careers and, in our later life, returned to our home town to reunite and share experiences. We're posting this site to communicate and coordinate with our numerous members worldwide and with potential members wherever they may be. This is for our amusement and entertainment. If you like it please return.</p>
                 </div>
             </Col>
-            <Col className='d-flex flex-column py-5'>
+            <Col lg={6} xs={12} className='d-flex flex-column py-5'>
                 <div className='d-flex align-self-center'>
                     <FontAwesomeIcon icon={faUserFriends} size="6x" />
                 </div>
