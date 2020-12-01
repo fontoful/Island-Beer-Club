@@ -1,5 +1,5 @@
+import Head from 'next/head'
 import React from 'react'
-
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
@@ -11,6 +11,10 @@ import Footer from './components/Footer'
 
 const History = () => (
     <>
+    <Head>
+        <title>IBC | History</title>
+        <link rel="icon" href="/beer-solid.svg" /> 
+      </Head>
     <Container className='bg-white px-0'>
 
         <Navigation />

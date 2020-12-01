@@ -21,14 +21,14 @@ const KegCredits = () => (
             <Row className='d-flex justify-content-center align-items-center pb-3'>
                 <Col lg={6} xs={12} className='d-flex justify-content-center align-items-center text-light'>
                     <CardGroup>
-                        <Card className='shadow'>
+                        <Card border="light" className='shadow'>
                             <Card.Img variant='top' src='/kegCoin.png' className='mx-auto' style={{ height: '122px', width: '122px'}} />
                             <Card.Body>
                                 <Card.Title className='text-dark display-5 text-center font-weight-bold'>1 Credit</Card.Title>
                                 <Card.Text className='text-dark text-center h4 py-5'> Purchase a quarter barrel AKA Pony Keg</Card.Text>
                             </Card.Body>
                         </Card>
-                        <Card className='shadow'>
+                        <Card border="light" className='shadow'>
                             <Card.Img variant='top' src='/kegCoins.png' className='mx-auto' style={{ height: '122px', width: '182px'}} />
                             <Card.Body>
                                 <Card.Title className='text-dark display-5 text-center font-weight-bold'>2 Credit</Card.Title>

@@ -13,6 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.12",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.0.2",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-bootstrap": "^1.4.0",

@@ -13,7 +13,7 @@ const Navigation = () => (
     <Link href='/history' passHref>
 						<Nav.Link>History</Nav.Link>
 					</Link>
-      <Nav.Link href="#profiles"><del>Profiles</del></Nav.Link>
+      <Nav.Link href="/profiles"><del>Profiles</del></Nav.Link>
       <NavDropdown title={<del>More</del>} id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action"><del>Action</del></NavDropdown.Item>
         <NavDropdown.Item href="#action"><del>Another action</del></NavDropdown.Item>
