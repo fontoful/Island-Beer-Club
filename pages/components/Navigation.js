@@ -10,16 +10,22 @@ const Navigation = () => (
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className='justify-content-center'>
-    <Link href='/history' passHref>
+    <Link href='/' passHref>
+						<Nav.Link>Home</Nav.Link>
+			</Link>
+      <Link href='/history' passHref>
 						<Nav.Link>History</Nav.Link>
-					</Link>
-      <Nav.Link href="/profiles"><del>Profiles</del></Nav.Link>
+			</Link>
+      <Link href='/profiles' passHref>
+        <Nav.Link>Profiles</Nav.Link>
+      </Link>
+      <Link href='/foundersDayPage' passHref>
+        <Nav.Link>Founders Day</Nav.Link>
+      </Link>
       <NavDropdown title={<del>More</del>} id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action"><del>Action</del></NavDropdown.Item>
-        <NavDropdown.Item href="#action"><del>Another action</del></NavDropdown.Item>
-        <NavDropdown.Item href="#action"><del>Something</del></NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4"><del>Separated link</del></NavDropdown.Item>
+        <Link href="/memberRegistration" passHref>
+          <NavDropdown.Item>Member Registration</NavDropdown.Item>
+        </Link>
       </NavDropdown>
     </Nav>
     <Nav className='flex-fill justify-content-end'>

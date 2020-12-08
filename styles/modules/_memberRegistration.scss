@@ -1,0 +1,97 @@
+.form-container {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.member-reg-col-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)), 
+        url(/redDraftBeer.jpg)
+        no-repeat
+        center;
+    background-size: cover;
+}
+
+.question-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 1rem 0;
+}
+
+.member-reg-col-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-reg__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.member-reg__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+.member-reg__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem 3rem 1rem;
+}
+
+.member-reg__input {
+    background: transparent;
+    border: none;
+    border-bottom: .2rem solid darken($dark-blue, 10%);
+    width: 70%;
+    font-size: $m-size;
+    font-weight: bolder;
+}
+
+.member-reg-group__textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.member-reg__label {
+    display: flex;
+    font-size: $m-size;
+    font-weight: bolder;
+}
+
+.member-reg__textarea {
+    background: transparent;
+    border: .2rem solid darken($dark-blue, 10%);
+    border-radius: .5rem;
+    font-size: $m-size;
+    height: 150px;
+    resize: none;
+    width: 100%;
+}
+.w-85 {
+    width: 83%;
+}
+
+.member-reg__btn{
+    background-color: #205698 !important;
+}
+
+.member-reg__btn:hover{
+    background-color: #0e2e55 !important;
+}

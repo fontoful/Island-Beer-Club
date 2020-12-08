@@ -14,7 +14,7 @@ import Navigation from './components/Navigation'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
-console.log(firebase.storage())
+//console.log(firebase.storage())
 const getUrl = pathToFile => {
 	const bucket = 'island-beer-club.appspot.com'
 	const img = pathToFile
@@ -68,11 +68,9 @@ const Profiles = props => {
 					</Form>
 				</div>
 				<div className='profile__container'>
-						{profiles.map((profile, index) => (
+						{profiles.map((profile) => (
 								<div key={profile.mbr} className='profile-card shadow'>
-
-					
-
+										
 									<div className='profile-header'>
 										<Image className='profile-img' thumbnail src={getUrl(profile.img)} />
 										<div className='profile-stats text-light'>
@@ -87,19 +85,19 @@ const Profiles = props => {
 									<div className='profile-navigation'>
 										<Tabs defaultActiveKey="bio" id="uncontrolled-tab-example">
 											<Tab eventKey="bio" title="Bio" className='profile-body'>
-											{profile.bio}
+											{profile.bio.length === 0 ? 'No bio.' : profile.bio}
 											</Tab>
 											<Tab eventKey="likes" title="Likes" className='profile-body'>  
-											{profile.likes}
+											{profile.likes.length === 0 ? 'No likes.' : profile.likes}
 											</Tab>
 											<Tab eventKey="dislikes" title="Dislikes" className='profile-body'>  
-											{profile.dislikes}
+											{profile.dislikes.length === 0 ? 'No dislikes.' : profile.dislikes}
 											</Tab>
 											<Tab eventKey="hobbies" title="Hobbies" className='profile-body'>  
-											{profile.hobbies}
+											{profile.hobbies.length === 0 ? 'No hobbies.' : profile.hobbies}
 											</Tab>
 											<Tab eventKey="nicknames" title="Nicknames" className='profile-body'>
-											<p></p>
+											{profile.nicknames.length === 0 ? 'No nicknames.' : profile.nicknames}
 											</Tab>
 										</Tabs>
 									</div>

@@ -3,9 +3,9 @@
         url(/beerCheer.jpg);
     color: $white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    align-self: flex-start;
     width: 100%;
 }
 .profile-search__container {

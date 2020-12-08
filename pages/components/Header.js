@@ -11,7 +11,8 @@ const Header = () => {
   <>
 	<Container fluid className='main-header'>
     <Image className='landing-logo' src='/IBCLogo2.png' />
-    <h3 className='landing__text'>For Members Only</h3>
+    <h3 className='landing__text'>For Members only</h3>
+    <h5>Opt-in here to receive our periodic eGram.</h5>
 
     <Button
         onClick={() => setOpen(!open)}

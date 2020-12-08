@@ -25,6 +25,7 @@ const FoundersDay = () => (
                     With Mariachis, tacos, beer, ladies and cake; life doesn't get much better.
                 </p>
                 <Button variant="flat" size='xxl'>Donate</Button>
+                <Button variant="primary" size='xxl'>Read More</Button>
             </Col>
         </Row>
 

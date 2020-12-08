@@ -4,7 +4,9 @@
 @import './components/header';
 @import './components/navigation';
 @import './modules/home';
-@import './modules//history';
-@import './modules//profiles.scss';
+@import './modules/history';
+@import './modules/profiles';
+@import './modules/foundersDay';
+@import './modules/memberRegistration';
 //Bootstrap.scss must be last.
 @import "../node_modules/bootstrap/scss/bootstrap";
