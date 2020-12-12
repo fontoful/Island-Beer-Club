@@ -75,11 +75,11 @@ const Profiles = props => {
 										<Image className='profile-img' thumbnail src={getUrl(profile.img)} />
 										<div className='profile-stats text-light'>
 											<h4>{profile.name} </h4>
-											<h5>{profile.msd}</h5>
-											<h6>{profile.sponsor}</h6>
+											<h5>MSD: {profile.msd}</h5>
+											<h6>Sponsor: {profile.sponsor}</h6>
 										</div>
 										<div className='profile-number pt-2 text-light'>
-											<h3>Mbr#:{profile.mbr}</h3>
+											<h3>#{profile.mbr}</h3>
 										</div>
 									</div>
 									<div className='profile-navigation'>
