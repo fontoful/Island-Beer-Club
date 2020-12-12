@@ -6,8 +6,8 @@ export const loadProfiles = async (query = {}) => {
 	let docsSnap = await firebase
 		.firestore()
 		.collection('profilesTest')
-		.where('is_member', '==', 'true')
-		// .orderBy('number', 'asc')
+		//.where('is_member', '==', 'true')
+		.orderBy('mbr', 'asc')
 		.get()
 
 	let profiles = docsSnap.docs.map(doc => doc.data())

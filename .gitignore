@@ -12,6 +12,8 @@
 # testing
 /coverage
 /y/
+# testing
+/coverage
 
 # next.js
 /.next/

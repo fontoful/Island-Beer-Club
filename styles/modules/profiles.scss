@@ -1,0 +1,89 @@
+.profile-jumbotron {
+    background:radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+        url(/beerCheer.jpg);
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: 100%;
+}
+.profile-search__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-search__form {
+    display: flex;
+    min-width: 40rem;
+    padding: $s-size;
+}
+.profile-search__input {
+    flex-grow: 1;
+    border: none;
+    border-bottom: .2rem solid darken($off-white, 10%);
+    border-radius: .5rem;
+    color: $dark-gray;
+    margin: 0 $s-size 0 0;
+    padding: $s-size;
+}
+
+.profile__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: stretch;
+    padding: 5rem 0 0 0;
+}
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem 5rem 2rem;
+    border-radius: 10px;
+    background-color: $white;
+    width: 40rem;
+}
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    background-color: $dark-gray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.profile-img {
+    margin: -4rem 1rem 1rem 1rem;
+    width: 100px;
+    height: 100px;
+}
+.profile-stats {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0 0 .5rem;
+}
+
+.profile-number {
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-end;
+    padding: 0 1rem 0 0;
+}
+
+.profile-navigation nav a  {
+    color: $dark-gray;
+}
+.profile-navigation nav a:hover  {
+    color: $off-white;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 8rem;
+    padding: .7rem;
+}
