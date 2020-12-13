@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Footer from './components/Footer'
 
 const History = () => (
-	<Head>
+	<>
 		<Head>
 			<title>IBC | History</title>
 			<link rel='icon' href='/beer-solid.svg' />
@@ -159,7 +159,7 @@ const History = () => (
 			</Row>
 			<Footer />
 		</Container>
-	</Head>
+	</>
 )
 
 export default History
