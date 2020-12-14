@@ -17,13 +17,11 @@ export const loadProfiles = async (query = {}) => {
 
 	if (search) {
 		if (numbSearch) {
-			console.log('this is a string')
 			const searchRegex = new RegExp(search, 'gi')
 			profiles = profiles.filter(profile =>
 				profile.name.match(searchRegex),
 			)
 		} else {
-			console.log('this is a number')
 			profiles = profiles.filter(profile => profile.mbr === +search)
 		}
 	}

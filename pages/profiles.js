@@ -65,7 +65,7 @@ const Profiles = props => {
 							className='profile-search__input'
 							type='text'
 							name='searchField'
-							placeholder='Search by name...'
+							placeholder='Search by name or MBR#'
 							defaultValue={router.query.search}
 						/>
 						<Button type='submit' size='xxl'>
