@@ -3,6 +3,9 @@ import firebase from '../../lib/firebase'
 export const loadProfiles = async (query = {}) => {
 	const { search } = query
 
+	const numbSearch = Number.isNaN(+search)
+	console.log(numbSearch)
+
 	let docsSnap = await firebase
 		.firestore()
 		.collection('profilesTest')
@@ -13,12 +16,16 @@ export const loadProfiles = async (query = {}) => {
 	let profiles = docsSnap.docs.map(doc => doc.data())
 
 	if (search) {
-		const searchRegex = new RegExp(search, 'gi')
-		profiles = profiles.filter(
-			profile =>
-				typeof profile.name === 'string' &&
+		if (numbSearch) {
+			console.log('this is a string')
+			const searchRegex = new RegExp(search, 'gi')
+			profiles = profiles.filter(profile =>
 				profile.name.match(searchRegex),
-		)
+			)
+		} else {
+			console.log('this is a number')
+			profiles = profiles.filter(profile => profile.mbr === +search)
+		}
 	}
 
 	return profiles
