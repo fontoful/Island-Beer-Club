@@ -50,29 +50,32 @@ const Profiles = props => {
 		<>
 			<Head>
 				<title>Island Beer Club | Profiles</title>
+				<link rel='icon' href='/beer-solid.svg' />
 			</Head>
-			<Container className='bg-light px-0'>
+			<Container fluid='sm' className='bg-light px-0'>
 				<Navigation />
 				<Jumbotron fluid className='profile-jumbotron'>
 					<p className='display-2'>Member Profiles</p>
 				</Jumbotron>
-				<div className='profile-search__container'>
 					<Form
 						className='profile-search__form'
 						onSubmit={handleFormSubmit}
 					>
-						<input
-							className='profile-search__input'
+						<Form.Control
+							size='lg'
+							className='profile-search__input p-4'
 							type='text'
 							name='searchField'
-							placeholder='Search by name or MBR#'
+							placeholder='Name, MBR#'
 							defaultValue={router.query.search}
 						/>
-						<Button type='submit' size='xxl'>
+						<Button 
+							type='submit' 
+							size='lg'
+							variant='secondary'>
 							Search
 						</Button>
 					</Form>
-				</div>
 				<div className='profile__container'>
 					{profiles.map(profile => (
 						<div key={profile.mbr} className='profile-card shadow'>

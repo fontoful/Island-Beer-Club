@@ -1,6 +1,8 @@
 .profile-jumbotron {
-    background:radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-        url(/beerCheer.jpg);
+    background:
+    radial-gradient(rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)), 
+    url(/beerCheer.jpg);
     color: $white;
     display: flex;
     justify-content: center;
@@ -8,24 +10,19 @@
     align-self: flex-start;
     width: 100%;
 }
-.profile-search__container {
+.profile-search__form {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.profile-search__form {
-    display: flex;
-    min-width: 40rem;
-    padding: $s-size;
+    padding: $m-size;
 }
 .profile-search__input {
-    flex-grow: 1;
-    border: none;
-    border-bottom: .2rem solid darken($off-white, 10%);
-    border-radius: .5rem;
+    border: none !important;
+    border-bottom: .2rem solid darken(#6c757d, 10%) !important;
+    border-radius: .5rem !important;
     color: $dark-gray;
-    margin: 0 $s-size 0 0;
-    padding: $s-size;
+    margin-right: 1rem;
+    max-width: 40rem;
 }
 
 .profile__container {
