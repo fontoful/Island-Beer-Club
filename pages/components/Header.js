@@ -18,7 +18,7 @@ const Header = () => {
         onClick={() => setOpen(!open)}
         aria-controls="fade-text"
         aria-expanded={open}
-        size='xxl'
+        size='lg'
         variant='outline-light'
       >
         Opt-In
