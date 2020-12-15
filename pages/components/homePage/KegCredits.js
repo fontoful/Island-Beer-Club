@@ -29,7 +29,7 @@ const KegCredits = () => (
                             </Card.Body>
                         </Card>
                         <Card border="light" className='shadow'>
-                            <Card.Img variant='top' src='/kegCoins.png' className='mx-auto' style={{ height: '122px', width: '182px'}} />
+                            <Card.Img variant='top' src='/KegCoins.png' className='mx-auto' style={{ height: '122px', width: '182px'}} />
                             <Card.Body>
                                 <Card.Title className='text-dark display-5 text-center font-weight-bold'>2 Credit</Card.Title>
                                 <Card.Text className='text-dark text-center h4 py-5'> Purchase a half barrel AKA Full Keg</Card.Text>
