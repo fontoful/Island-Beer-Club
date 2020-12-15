@@ -1,20 +1,19 @@
+import Link from 'next/link'
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
 const Footer = () => (
-        <Container fluid className='bg-dark'>
+        <Container fluid className='ibc-footer bg-dark'>
             <Row className='justify-content-center align-content-center text-light'>
-                <Col className='d-flex justify-content-center align-content-center'>
-                <Image src='/IBCLogo.png' fluid className='mx-auto my-4' style={{ height: '50%', width: '50%' }} />
+                <Col className='ibc-footer-col'>
+                <Image src='/IBCLogo2.png' fluid className='px-5 my-4' />
                 </Col>
-                <Col className='d-flex flex-row justify-content-center align-items-center'>
-                <p>© 2020 Copyright:</p>
-				<p><a href='https://islandbeerclub.com'> 🍺  {' '}Island Beer Club</a></p>
-                </Col>
-                <Col className='d-flex flex-column justify-content-center align-items-center'>
-                Item 3
+                <Col className='ibc-footer-col'>
+				<Link href='https://islandbeerclub.com' passHref>
+                    <Nav.Link>Island Beer Club</Nav.Link></Link>
                 </Col>
             </Row>
         </Container>
