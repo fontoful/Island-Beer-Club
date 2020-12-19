@@ -57,25 +57,22 @@ const Profiles = props => {
 				<Jumbotron fluid className='profile-jumbotron'>
 					<p className='display-2'>Member Profiles</p>
 				</Jumbotron>
-					<Form
-						className='profile-search__form'
-						onSubmit={handleFormSubmit}
-					>
-						<Form.Control
-							size='lg'
-							className='profile-search__input p-4'
-							type='text'
-							name='searchField'
-							placeholder='Name, MBR#'
-							defaultValue={router.query.search}
-						/>
-						<Button 
-							type='submit' 
-							size='lg'
-							variant='secondary'>
-							Search
-						</Button>
-					</Form>
+				<Form
+					className='profile-search__form'
+					onSubmit={handleFormSubmit}
+				>
+					<Form.Control
+						size='lg'
+						className='profile-search__input p-4'
+						type='text'
+						name='searchField'
+						placeholder='Name, MBR#'
+						defaultValue={router.query.search}
+					/>
+					<Button type='submit' size='lg' variant='secondary'>
+						Search
+					</Button>
+				</Form>
 				<div className='profile__container'>
 					{profiles.map(profile => (
 						<div key={profile.mbr} className='profile-card shadow'>
