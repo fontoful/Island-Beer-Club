@@ -4,7 +4,6 @@ export const loadProfiles = async (query = {}) => {
 	const { search } = query
 
 	const numbSearch = Number.isNaN(+search)
-	console.log(numbSearch)
 
 	let docsSnap = await firebase
 		.firestore()
