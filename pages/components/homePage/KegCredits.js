@@ -40,7 +40,7 @@ const KegCredits = () => (
 
                 <Col lg={6} xs={12} className='d-flex flex-column justify-content-center align-items-center text-dark'>
                     <blockquote className="blockquote text-center">
-                        <p className="mb-0 display-4">You’re everyone’s favorite member when it’s your turn to buy.</p>
+                        <p className="mb-0 lead">You’re everyone’s favorite member when it’s your turn to buy.</p>
                         <footer className="blockquote-footer"><cite title="Source Title">Rob Crenshaw</cite></footer>
                     </blockquote>
                 </Col>
@@ -48,7 +48,12 @@ const KegCredits = () => (
             <Row className='p-5'>
                 <Col className='d-flex flex-column justify-content-center align-items-center'>
                     <p className='h3 text-dark pb-3'>A low credit number qualifies you to buy our next keg.</p>
-                    <Button variant='primary' size='xxl'>View Keg Stats</Button>
+                    <Button 
+                        variant='primary' 
+                        size='xxl'
+                        disabled>
+                            View Keg Stats
+                    </Button>
                 </Col>
             </Row>
 

@@ -26,11 +26,14 @@ const Navigation = () => (
         <Link href="/memberRegistration" passHref>
           <NavDropdown.Item>Member Registration</NavDropdown.Item>
         </Link>
+        <Link href="/stats" passHref>
+          <NavDropdown.Item>Stats</NavDropdown.Item>
+        </Link>
       </NavDropdown>
     </Nav>
     <Nav className='flex-fill justify-content-end'>
       <Nav.Link href="#login"><del>Login In</del></Nav.Link>
-      <Nav.Link eventKey={2} href="#memes"><del>Notifications</del></Nav.Link>
+      <Nav.Link href="#memes"><del>Notifications</del></Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

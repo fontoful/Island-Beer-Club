@@ -7,25 +7,21 @@ import Image from 'react-bootstrap/Image'
 
 const FoundersDay = () => (
     <>
-    <Container fluid className='d-flex flex-column justify-content-center section bg-light'>
+    <Container fluid className='d-flex flex-column justify-content-center section py-4 bg-light'>
         <Row>
             <Col className='d-flex justify-content-center align-itmes-center'>
-                <p className='display-3 pt-3'>Founder's Day</p>
+                <p className='display-3'>Founder's Day</p>
             </Col>
         </Row>
-        <Row className='d-flex justify-content-center flex-grow-1'>
-            <Col className='d-flex justify-content-center align-items-center text-light'>
-                <Image src='/FoundersDay.jpg' fluid />
+        <Row className='d-flex justify-content-center'>
+            <Col xs={8} lg={6} className='d-flex justify-content-center align-items-center  py-4 text-light'>
+                <Image src='/FoundersDay.jpg' fluid rounded className='shadow' />
             </Col>
             <Col className='d-flex flex-column justify-content-center align-items-center text-dark'>
-                <p className='display-4 text-dark mt-2 text-center'>
-                    Founder's Day History
-                </p>
                 <p className='text-dark h5 pb-4 text-center'>
-                    With Mariachis, tacos, beer, ladies and cake; life doesn't get much better.
+                    With Mariachis, tacos, beer, ladies and cake; life doesn't get much better <a className='text-primary' href='foundersDayPage'>read more</a>.
                 </p>
-                <Button variant="flat" size='xxl'>Donate</Button>
-                <Button variant="primary" size='xxl'>Read More</Button>
+                <Button disabled variant="flat" size='xxl'>Donate</Button>
             </Col>
         </Row>
 
