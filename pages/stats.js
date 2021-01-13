@@ -1,4 +1,7 @@
+import React,{useState,useEffect} from 'react';
+import { loadKegCredits } from './api/credits'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import { 
@@ -9,11 +12,13 @@ import {
 	Table
 } from 'react-bootstrap'
 
-const stats = () => {
+const Stats = props => {
+	const router = useRouter()
+	const [kegCredits, setKegCredits] = useState(props.kegCredits)
 	return (
 		<>
 		<Head>
-		<title>IBC | History</title>
+		<title>IBC | Keg Credits</title>
 		<link rel='icon' href='/beer-solid.svg' />
 		</Head>
 
@@ -63,9 +68,9 @@ const stats = () => {
 					<p>Credits-In-Kind</p>
 				</Col>
 				<Col className='pt-3'>
-			<blockquote class="blockquote">
-				<p class="lead mb-0">You are everyone's favorite member when it's your turn to buy.</p>
-				<footer class="blockquote-footer">--Crash Crenshaw<cite title="Source Title"></cite></footer>
+			<blockquote className="blockquote">
+				<p className="lead mb-0">You are everyone's favorite member when it's your turn to buy.</p>
+				<footer className="blockquote-footer">--Crash Crenshaw<cite title="Source Title"></cite></footer>
 			</blockquote>
 			</Col>
 			</Row>
@@ -82,18 +87,17 @@ const stats = () => {
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-							<td>1</td>
-							<td>Jeff Wilkens</td>
-							<td>1</td>
-							<td>Capital Man</td>
-							</tr>
-							<tr>
-							<td>1</td>
-							<td>Jeff Wilkens</td>
-							<td>1</td>
-							<td>Capital Man</td>
-							</tr>
+							
+								{kegCredits.map(kegCredit => (
+								<tr key={kegCredit.pk}>
+									<td>{kegCredit.pk}</td>
+									<td>{kegCredit.name}</td>
+									<td>{kegCredit.mbrNumber}</td>
+									<td>{kegCredit.kic}</td>
+								</tr>
+								))}
+
+						
 						</tbody>
 					</Table>
 				</Col>
@@ -104,4 +108,14 @@ const stats = () => {
 	)
 }
 
-export default stats
+export const getServerSideProps = async ctx => {
+	const { query } = ctx
+	const kegCredits = await loadKegCredits(query)
+	return {
+		props: {
+			kegCredits,
+		},
+	}
+}
+
+export default Stats
