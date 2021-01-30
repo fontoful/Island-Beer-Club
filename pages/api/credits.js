@@ -2,7 +2,6 @@ import firebase from '../../lib/firebase'
 
 export const loadKegCredits = async (query = {}) => {
 	
-
 	let docsSnap = await firebase
 		.firestore()
 		.collection('creditData')
@@ -10,7 +9,6 @@ export const loadKegCredits = async (query = {}) => {
 		.get()
 
 	let kegCredits = docsSnap.docs.map(doc => doc.data())
-
 
 	return kegCredits
 }

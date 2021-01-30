@@ -1,5 +1,6 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect} from 'react'
 import { loadKegCredits } from './api/credits'
+import { loadKegConsumption } from './api/consumption'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Navigation from './components/Navigation'
@@ -15,6 +16,12 @@ import {
 const Stats = props => {
 	const router = useRouter()
 	const [kegCredits, setKegCredits] = useState(props.kegCredits)
+	const [kegConsumption, setKegConsumption] = useState(props.kegConsumption)
+
+	//Trying to Sum up the total number of gallons consumed??
+	let sumGallons = kegConsumption.map(g => g.gallons)
+	let reducer = (accumulator, currentValue) => accumulator + currentValue
+	console.log(sumGallons.reduce(reducer))
 	return (
 		<>
 		<Head>
@@ -75,9 +82,9 @@ const Stats = props => {
 			</Col>
 			</Row>
 
-			<Row  className='w-75'>
+			<Row  className='w-75 text-center'>
 				<Col>
-					<Table className='table-rounded' responsive>
+					<Table className='table-rounded table-hover' responsive>
 						<thead>
 							<tr>
 							<th>Count</th>
@@ -87,7 +94,6 @@ const Stats = props => {
 							</tr>
 						</thead>
 						<tbody>
-							
 								{kegCredits.map(kegCredit => (
 								<tr key={kegCredit.pk}>
 									<td>{kegCredit.pk}</td>
@@ -96,8 +102,38 @@ const Stats = props => {
 									<td>{kegCredit.kic}</td>
 								</tr>
 								))}
-
-						
+						</tbody>
+					</Table>
+				</Col>
+			</Row>
+<hr></hr>
+			<Row  className='w-75 text-center d-flex flex-column'>
+				<Col>
+				<p className='display-3'>Beer Consumed</p>
+				</Col>
+				<Col>
+					<Table className='table-rounded table-hover' responsive>
+						<thead>
+							<tr>
+							<th>Kegs</th>
+							<th>Purchased</th>
+							<th>Delivered</th>
+							<th>Finished</th>
+							<th>Beer Name</th>
+							<th>Gallons</th>
+							</tr>
+						</thead>
+						<tbody>
+								{kegConsumption.map(consumed => (
+								<tr key={consumed.kegs}>
+									<td>{consumed.kegs}</td>
+									<td>{consumed.purchased}</td>
+									<td>{consumed.delivered}</td>
+									<td>{consumed.finished}</td>
+									<td>{consumed.beerName}</td>
+									<td>{consumed.gallons}</td>
+								</tr>
+								))}
 						</tbody>
 					</Table>
 				</Col>
@@ -111,9 +147,11 @@ const Stats = props => {
 export const getServerSideProps = async ctx => {
 	const { query } = ctx
 	const kegCredits = await loadKegCredits(query)
+	const kegConsumption = await loadKegConsumption(query)
 	return {
 		props: {
 			kegCredits,
+			kegConsumption
 		},
 	}
 }
