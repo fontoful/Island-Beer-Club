@@ -32,6 +32,9 @@ const Navigation = () => (
         <Link href="/beerStyles" passHref>
           <NavDropdown.Item>Styles</NavDropdown.Item>
         </Link>
+        <Link href="/ibus" passHref>
+          <NavDropdown.Item>IBU's</NavDropdown.Item>
+        </Link>
       </NavDropdown>
     </Nav>
     <Nav className='flex-fill justify-content-end'>
