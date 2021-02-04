@@ -3,6 +3,7 @@ import { loadKegCredits } from './api/credits'
 import { loadKegConsumption } from './api/consumption'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import { 
@@ -21,7 +22,7 @@ const Stats = props => {
 	//Trying to Sum up the total number of gallons consumed??
 	let sumGallons = kegConsumption.map(g => g.gallons)
 	let reducer = (accumulator, currentValue) => accumulator + currentValue
-	console.log(sumGallons.reduce(reducer))
+	//console.log(sumGallons.reduce(reducer))
 	return (
 		<>
 		<Head>

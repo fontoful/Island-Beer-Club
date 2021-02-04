@@ -1,20 +1,20 @@
 import firebase from '../../lib/firebase'
 
-export const loadKegConsumption = async (query = {}) => {
+export const loadIbuData = async (query = {}) => {
     let docsSnap = await firebase
         .firestore()
-        .collection('kegConsumption')
-        .orderBy('kegs')
+        .collection('ibuData')
+        .orderBy('beerStyle')
         .get()
     
-    let kegConsumption = docsSnap.docs.map(doc => doc.data())
+    let ibuData = docsSnap.docs.map(doc => doc.data())
 
-    return kegConsumption
+    return ibuData
 }
 
 export default async (req, res) => {
     const output = {
-        kegConsumption: await loadKegConsumption(req.query),
+        ibuData: await loadIbuData(req.query),
     }
 
     res.setHeader('Content-Type', 'application/json')

@@ -1,4 +1,8 @@
+import React,{useState,useEffect} from 'react'
+import { loadIbuData } from './api/ibus'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
@@ -10,7 +14,10 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Row from 'react-bootstrap/Row'
 import Table from 'react-bootstrap/Table'
 
-const Ibus = () => {
+const Ibus = props => {
+	const router = useRouter()
+	const [ibuData, setIbuData] = useState(props.ibuData)
+	//console.log(props)
 	return (
 		<>
 		<Head>
@@ -83,7 +90,12 @@ const Ibus = () => {
 						</tr>
 					</thead>
 					<tbody>
-					
+						{ibuData.map(ibu => (
+							<tr key={ibu.id}>
+								<td>{ibu.beerStyle}</td>
+								<td>{ibu.ibu}</td>
+							</tr>
+						))}
 					</tbody>
 				</Table>
 			</Col>
@@ -95,6 +107,16 @@ const Ibus = () => {
 
 		</>
 	)
+}
+
+export const getServerSideProps = async ctx => {
+	const { query } = ctx
+	const ibuData = await loadIbuData(query)
+	return {
+		props: {
+			ibuData
+		}
+	}
 }
 
 export default Ibus
