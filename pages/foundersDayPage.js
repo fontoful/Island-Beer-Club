@@ -14,7 +14,8 @@ import Modal from 'react-bootstrap/Modal'
 import Navigation from './components/Navigation'
 import Row from 'react-bootstrap/Row'
 
-function VerticallyCenteredModal(props) {
+const NeilsonModal = (props) => {
+
     return (
       <Modal
         {...props}
@@ -23,24 +24,110 @@ function VerticallyCenteredModal(props) {
         centered
       >
         <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-vcenter">
-                Submitted By: Rod Neilson - Mbr #141
+            <Modal.Title id="contained-modal-title-vcenter" className='display-4'>
+                Filmed By: Ed Weisbrod
             </Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <ResponsiveEmbed aspectRatio='16by9'>
                 <embed
-                    src='https://www.youtube.com/watch?v=nPCawAq0P6M&feature=youtu.be'
+                src="https://www.youtube.com/embed/4VGagVrj3nc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
                 />
             </ResponsiveEmbed>
         </Modal.Body>
-        <Modal.Footer className='d-flex justify-content-center align-items-center'>
-          <Button size='xxl' onClick={props.onHide}>Close</Button>
+        <Modal.Footer className='d-flex justify-content-center'>
+          <Button size='xxl' variant='secondary' onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );
   }
-  
+
+const WeisbrodModal = (props) => {
+
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter" className='display-4'>
+                Filmed By: Ed Weisbrod
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <ResponsiveEmbed aspectRatio='16by9'>
+                <embed
+                src="https://www.youtube.com/embed/e3RnAUvCS2Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                />
+            </ResponsiveEmbed>
+        </Modal.Body>
+        <Modal.Footer className='d-flex justify-content-center'>
+          <Button size='xxl' variant='secondary' onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
+  const KayeModal = (props) => {
+
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter" className='display-4'>
+                Filmed By: Ed Weisbrod
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <ResponsiveEmbed aspectRatio='16by9'>
+                <embed
+                src=""
+                allowfullscreen
+                />
+            </ResponsiveEmbed>
+        </Modal.Body>
+        <Modal.Footer className='d-flex justify-content-center'>
+          <Button size='xxl' variant='secondary' onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+
+  const StricklandModal = (props) => {
+
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter" className='display-4'>
+                Filmed By: Ed Weisbrod
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <ResponsiveEmbed aspectRatio='16by9'>
+                <embed
+                src="https://www.youtube.com/embed/4VGagVrj3nc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                />
+            </ResponsiveEmbed>
+        </Modal.Body>
+        <Modal.Footer className='d-flex justify-content-center'>
+          <Button size='xxl' variant='secondary' onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 const FoundersDayPage = () => {
     const [modalShow, setModalShow] = React.useState(false);
@@ -98,7 +185,7 @@ const FoundersDayPage = () => {
                     disabled>
                         Play
                 </Button>
-                <VerticallyCenteredModal
+                <NeilsonModal
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                 />
@@ -114,7 +201,7 @@ const FoundersDayPage = () => {
             </Col>
         </Row>
 
-        <Row className='mx-auto my-4'>
+        <Row className='mx-auto my-4 bg-light w-100 p-4'>
             <Col className='d-flex flex-column justify-content-center align-items-center'>
                 <p className='display-4 text-center'>Test Your IBC Knowledge</p>
                 <ListGroup>
@@ -140,35 +227,45 @@ const FoundersDayPage = () => {
             <Col className='my-card shadow'>
                 <p className='align-self-center h5 text-center pb-2'>Filmed by Ed Weisbrod:</p>
                 <Button 
-                 variant='secondary'
-                 target='blank' 
-                 href='/foundersPoem.pdf' 
-                 size='lg' 
-                 disabled>
-                     View
+                    variant='primary' 
+                    size='lg' 
+                    onClick={() => setModalShow(true)} 
+                    >
+                        Play
                 </Button>
+                <WeisbrodModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </Col>
             <Col className='my-card shadow'>
                 <p className='align-self-center h5 text-center pb-2'>Filmed by Scott Kaye:</p>
-                <Button
-                 variant='secondary'
-                 target='blank' 
-                 href='/foundersPoem.pdf' 
-                 size='lg' 
-                 disabled>
-                     View
+                <Button 
+                    variant='secondary' 
+                    size='lg' 
+                    disabled
+                    onClick={() => setModalShow(true)} 
+                    >
+                        Play
                 </Button>
+                <KayeModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </Col>
             <Col className='my-card shadow'>
                 <p className='align-self-center h5 text-center pb-2'>Filmed by Wayne Strickland:</p>
-                <Button
-                 variant='secondary'
-                 target='blank' 
-                 href='/foundersPoem.pdf' 
-                 size='lg' 
-                 disabled>
-                     View
+                <Button 
+                    variant='primary' 
+                    size='lg' 
+                    onClick={() => setModalShow(true)} 
+                    >
+                        Play
                 </Button>
+                <StricklandModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </Col>
         </Row>
         

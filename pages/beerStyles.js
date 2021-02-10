@@ -35,7 +35,7 @@ const Styles = () => {
 						<h2>
 							Want help choosing your next beer?
 						</h2>
-						<Button variant='xxl-primary' href='http://www.keithandthegirl.com/forums/f6/beer-flowchart-14399/'>CLICK HERE</Button>
+						<Button size='xxl' variant='primary' href='http://www.keithandthegirl.com/forums/f6/beer-flowchart-14399/'>CLICK HERE</Button>
 					</Col>
 				</Row>
 				<Row className='d-flex align-items-center w-100'>

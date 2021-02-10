@@ -9,7 +9,7 @@ const Footer = () => (
         <Container fluid className='ibc-footer bg-dark'>
             <Row className='justify-content-center align-content-center text-light'>
                 <Col className='ibc-footer-col'>
-                <Image src='/IBCLogo2.png' fluid className='footer-brand px-5 my-4' />
+                <Image src='/IBCLogo2.png' fluid className='footer-brand m-2' />
                 </Col>
                 <Col className='ibc-footer-col'>
 				<Link href='https://islandbeerclub.com' passHref>

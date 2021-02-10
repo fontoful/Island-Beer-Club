@@ -1,7 +1,7 @@
-//----- Font ----- 
+//----- Lead Font Sizing ----- 
 $lead-font-size: 1.9rem;
 $lead-font-weight: 400;
-//----- Spacing ------
+//----- Child Spacing ------
 $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
@@ -20,5 +20,5 @@ $link-color: #ececec;
 // Navbar
 $navbar-dark-brand-color: $white;
 $navbar-brand-font-size: $m-size;
-// Header
-$header-height: 40vh;
+///----- Index Header
+$header-height: 80vh !important;

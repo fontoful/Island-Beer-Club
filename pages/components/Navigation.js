@@ -1,49 +1,63 @@
-import Link from 'next/link'
+import { useRouter } from 'next/router'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import LinkElement from './LinkElement'
 
 const Navigation = () => (
     <>
-  <Navbar fixed='top' collapseOnSelect expand="md" variant="dark">
-  <Navbar.Brand className='flex-fill justify-content-start' href="/">Island Beer Club</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className='justify-content-center'>
-    <Link href='/' passHref>
+  <Navbar fixed='top' collapseOnSelect expand='md' variant='dark' className='d-flex justify-content-between'>
+  <Navbar.Brand href='/'>
+      <img
+        src='/IBCLogo2.png'
+        width='125'
+        height='60'
+        className='d-inline-block align-top'
+        alt='React Bootstrap logo'
+      />
+  </Navbar.Brand>
+  <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+  <Navbar.Collapse id='responsive-navbar-nav'>
+    <Nav 
+      className='d-flex flex-grow-1 justify-content-center'
+      >
+    <LinkElement activeClassName='nav-link-active' href='/' passHref>
 						<Nav.Link>Home</Nav.Link>
-			</Link>
-      <Link href='/history' passHref>
+			</LinkElement>
+      <LinkElement activeClassName='nav-link-active' href='/history' passHref>
 						<Nav.Link>History</Nav.Link>
-			</Link>
-      <Link href='/profiles' passHref>
+			</LinkElement>
+      <LinkElement activeClassName='nav-link-active' href='/profiles' passHref>
         <Nav.Link>Profiles</Nav.Link>
-      </Link>
-      <Link href='/foundersDayPage' passHref>
+      </LinkElement>
+      <LinkElement activeClassName='nav-link-active' href='/foundersDayPage' passHref>
         <Nav.Link>Founders Day</Nav.Link>
-      </Link>
-      <NavDropdown title={<del>More</del>} id="collasible-nav-dropdown">
-        <Link href="/memberRegistration" passHref>
+      </LinkElement>
+      <NavDropdown title={<del>More</del>} id='collasible-nav-dropdown'>
+        <LinkElement activeClassName='nav-link-active' href='/memberRegistration' passHref>
           <NavDropdown.Item>Member Registration</NavDropdown.Item>
-        </Link>
-        <Link href="/stats" passHref>
+        </LinkElement>
+        <LinkElement activeClassName='nav-link-active' href='/stats' passHref>
           <NavDropdown.Item>Stats</NavDropdown.Item>
-        </Link>
-        <Link href="/beerStyles" passHref>
+        </LinkElement>
+        <LinkElement activeClassName='nav-link-active' href='/beerStyles' passHref>
           <NavDropdown.Item>Styles</NavDropdown.Item>
-        </Link>
-        <Link href="/ibus" passHref>
+        </LinkElement>
+        <LinkElement activeClassName='nav-link-active' href='/ibus' passHref>
           <NavDropdown.Item>IBU's</NavDropdown.Item>
-        </Link>
+        </LinkElement>
       </NavDropdown>
     </Nav>
-    <Nav className='flex-fill justify-content-end'>
-      <Nav.Link href="#login"><del>Login In</del></Nav.Link>
-      <Nav.Link href="#memes"><del>Notifications</del></Nav.Link>
+    <Nav className='flex-fill-1 justify-content-end'>
+      <LinkElement activeClassName='nav-link-active' href='#' passHref>
+        <Nav.Link><del>Login In</del></Nav.Link>
+      </LinkElement>
+      <LinkElement activeClassName='nav-link-active' href='#' passHref>
+        <Nav.Link><del>Notifications</del></Nav.Link>
+      </LinkElement>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
     </>
-)
-
+  )
 export default Navigation

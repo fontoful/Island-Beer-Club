@@ -1,5 +1,5 @@
 .navbar{
-    padding: 1.5rem 1.5rem !important;
+    //padding: 1.5rem 1.5rem !important;
     background-color: #2c2c2c !important;
 }
 
@@ -9,6 +9,9 @@
 
 .nav-link {
       font-weight: 400;
-      font-size: $m-size;
-      //color: $white !important;
+      font-size: $s-size;
+}
+
+.nav-link-active {
+    color: white !important;
 }

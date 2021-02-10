@@ -21,7 +21,7 @@ const BrewingProcess = () => (
                     variant='outline-primary' 
                     disabled 
                     className='text-center mt-3' 
-                    size='xxl'>
+                    size='lg'>
                         Read More
                 </Button>
             </Col>

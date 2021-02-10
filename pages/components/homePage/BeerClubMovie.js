@@ -9,10 +9,10 @@ const BeerClubMovie = () => (
     <Container fluid className='bg-secondary text-white py-4'>
       <Row className="d-flex justify-content-center">
         <Col className='text-center'>
-          <h1 className='display-3'>The Movie</h1>
+          <h1 className='display-4'>The Movie</h1>
         </Col>
       </Row>
-      <Row className="d-flex flex-column justify-content-center text-center px-3">
+      <Row className="d-flex flex-column justify-content-center text-center">
         <Col>
           <p className='lead'>We are the Island Beer Club</p>
         </Col>

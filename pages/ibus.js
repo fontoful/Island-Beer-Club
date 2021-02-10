@@ -41,17 +41,17 @@ const Ibus = props => {
 			<Col lg={4} xs={12} className='d-flex flex-column justify-content-between align-items-center'>
 				<FontAwesomeIcon className='my-4' icon={faWeight} size="9x" />
 				<div className='h2 text-center'>For those of you who are counting calories and are watching your waistline...</div>
-				<Button variant='xxl-primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
+				<Button size='xxl' variant='primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
 			</Col>
 			<Col lg={4} xs={12} className='d-flex flex-column justify-content-between align-items-center'>
 				<FontAwesomeIcon className='my-4' icon={faChartBar} size="9x" />
 				<div className='h2 text-center'>For those who want to calculate blood alcohol content based on your weight and the number of beers you've consumed...</div>
-				<Button variant='xxl-primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
+				<Button size='xxl' variant='primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
 			</Col>
 			<Col lg={4} xs={12} className='d-flex flex-column justify-content-between align-items-center'>
 				<FontAwesomeIcon className='my-4' icon={faQuestionCircle} size="9x" />
 				<div className='align-self-center h2 text-center'>Want help choosing your next beer?</div>
-				<Button variant='xxl-primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
+				<Button size='xxl' variant='primary' href='http://www.beer100.com/beercalories.htm'>Click Here</Button>
 			</Col>
 		</Row>
 	
