@@ -37,7 +37,6 @@ const Profiles = props => {
     indexOfLastProfile,
   )
   // cutting the Array
-
   const handleFormSubmit = async e => {
     e.preventDefault()
 
@@ -92,6 +91,7 @@ const Profiles = props => {
                   className='profile-img'
                   thumbnail
                   src={getUrl(profile.img)}
+                  style={{width: '150px', height:'150px'}}
                 />
                 <div className='profile-stats text-light'>
                   <h4>{profile.name} </h4>
@@ -142,7 +142,7 @@ const Profiles = props => {
             </div>
           ))}
         </div>
-        <div className='mx-auto'>
+        <div className='d-flex justify-content-center align-items-center bg-secondary'>
           <PaginationReact
             paginate={paginate}
             totalProfiles={profiles.length}

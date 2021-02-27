@@ -20,19 +20,19 @@ const History = () => (
 				fluid
 				className='d-flex justify-content-center align-items-center text-light beer-cheer w-100'
 			>
-				<p className='display-3'>Beer Club Histroy</p>
+				<p className='text-center display-3'>Beer Club Histroy</p>
 			</Jumbotron>
 
-			<Row className='d-flex flex-column flex-grow-2 w-100'>
+			<Row className='d-flex flex-column w-100'>
 				<Col className='text-dark'>
 					<Image
 						fluid
 						src='/JeffChair.jpg'
 						thumbnail
 						style={{ float: 'left', width: '30%', height: 'auto' }}
-						className=' shadow m-3'
+						className='shadow m-3'
 					/>
-					<p className='lead indent pt-3 pl-3'>
+					<p className='indent pt-3 pl-3'>
 						On a magnificent afternoon, mid-March in 2004, the
 						Island Beer Club (IBC) was founded. Jeff “Bones” Wilkens
 						(Mbr#1), John “Old Doc” Morton (Mbr#2), John “Cruncher”
@@ -47,7 +47,7 @@ const History = () => (
 						we could enjoy a cold, hand-crafted, micro-brewed beer
 						without the hassle of traveling off of the “Rock?”
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Since great ideas require intense thought and
 						discussion, our four-man brew crew adjourned to the VFW
 						bar in Coronado, CA for further liquid refreshment. At
@@ -60,7 +60,7 @@ const History = () => (
 						bar, in Coronado, to celebrate their brilliant thoughts
 						and begin the membership campaign.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Our man of action, Bones, purchased the kegerator just a
 						few days later. And, on Monday, March 22, 2004, Old Doc
 						delivered the first keg, Ballast Point Yellowtail Pale
@@ -70,7 +70,7 @@ const History = () => (
 						beer aficionados. He became Member#5 after he purchased
 						his first keg.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Meeting at 4 pm, the five grew fond of watching Jerry
 						Springer (not much else on the tube at that time) and
 						discussing the happenings in the universe. It was here
@@ -87,14 +87,14 @@ const History = () => (
 						“clear” would relieve themselves in Loie’s garden… This
 						was intolerable.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						On the first anniversary of the Beer Club, the first
 						urinal was installed. In 2013 the original urinal was
 						retired and replaced with a waterless urinal.
 						Unfortunately, nowadays, our meeting location may not
 						offer a lady’s restroom.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Always alert and “forward observant” (looking to the
 						future), Bones purchased the domain name,
 						www.islandbeerclub.com. He knew that it might be
@@ -107,7 +107,7 @@ const History = () => (
 						officially published in July 2006. This award-winning
 						website is the envy of beer clubs everywhere.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Signage plays a big part at the Island Beer Club. In
 						August 2006, our alley became “Beer Belly Blvd.” A year
 						later a permanent brass marker was installed
@@ -116,12 +116,12 @@ const History = () => (
 						hand-crafted, kiln-fired tile plaque to identify the
 						clubhouse of the IBC.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						John Weiman (Mbr#151), Weiman Design, designed our logo
 						in late October 2007; allowing us to acquire our now
 						highly sought after, custom apparel and glassware.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						In our first fourteen years of existence, we have
 						continually improved and upgraded the facility to
 						include a commercial popcorn maker (compliments of Mike
@@ -138,14 +138,14 @@ const History = () => (
 						provide a keg of hand-crafted beer. As of June 2020, we
 						have 407 members.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						Every March, on the Wednesday closest to 22 March, we
 						celebrate the anniversary of the Island Beer Club by
 						holding a Founders Day party. This event honors the five
 						Founders for creating Coronado’s favorite weekly alley
 						beer gathering.
 					</p>
-					<p className='lead indent pt-2 pl-3'>
+					<p className=' indent pt-2 pl-3'>
 						We lost Jeffery “Bones” Wilkens, (Mbr#1), on 6 Jul 2019.
 						On 7 Aug 2019, a huge turnout joined together in Beer
 						Belly Blvd to recognize Jeff, celebrate his life and

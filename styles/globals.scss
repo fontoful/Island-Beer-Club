@@ -3,27 +3,37 @@
 }
 html, body {
   padding: 0 0 0 0;
-  margin: 90px 0 0 0;
+  margin: 78px 0 0 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: $light-gray !important;
-  //font-size: 62.5%;
 }
 
+//---- Backgrounds & Shadows
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
+//---- Typography
+
 p {
-  text-rendering: optimizeLegibility;
-    //font-size:   $lead-font-size;
+    text-rendering: optimizeLegibility;
     line-height: 1.5;
     font-weight: $lead-font-weight;
 }
 
-.site-bg {
-  background-color: $white !important;
-  padding:          0 0 !important;
+strong {
+  font-weight: 500;
 }
 
-.bg-light-gray {
-  background-color: $light-gray;
+.blue-link a {
+  color: blue !important;
+}
+.indent {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-rendering: optimizeLegibility;
+  text-indent: 50px;
+  line-height: 1.58;
 }
 
 .t-fluff {

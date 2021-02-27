@@ -1,0 +1,17 @@
+b {
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: $dark-gray;
+}
+
+.my-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    justify-content: center;
+    margin: 1rem;
+    padding: .8rem;
+}

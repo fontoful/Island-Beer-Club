@@ -9,8 +9,8 @@ const PaginationReact = ({ profilesPerPage, totalProfiles, paginate }) => {
   }
 
   return (
-    <nav>
-      <ul className='pagination'>
+    <div>
+      <ul className='pagination pt-3'>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
             <a onClick={() => paginate(number)} href='#' className='page-link'>
@@ -19,7 +19,7 @@ const PaginationReact = ({ profilesPerPage, totalProfiles, paginate }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   )
 }
 

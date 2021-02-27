@@ -1,15 +1,15 @@
-@import './base/settings';
+@import './settings';
 @import './globals';
-@import './components/header';
 @import './components/navigation';
 @import './components/footer';
-@import './modules/home';
-@import './modules/history';
-@import './modules/profiles';
-@import './modules/foundersDay';
-@import './modules/memberRegistration';
-@import './modules/stats';
-@import './modules/beerStyles';
-@import './modules/ibu';
+@import './components/sideBar';
+@import './pages/index.scss';
+@import './pages/history';
+@import './pages/profiles';
+@import './pages/foundersDay';
+@import './pages/memberRegistration';
+@import './pages/stats';
+@import './pages/ibu';
+@import './pages/pagination';
 //Bootstrap.scss must be last.
 @import "../node_modules/bootstrap/scss/bootstrap";

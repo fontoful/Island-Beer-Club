@@ -6,18 +6,20 @@ import Image from 'react-bootstrap/Image'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
 const Footer = () => (
-        <Container fluid className='ibc-footer bg-dark'>
-            <Row className='justify-content-center align-content-center text-light'>
-                <Col className='ibc-footer-col'>
-                <Image src='/IBCLogo2.png' fluid className='footer-brand m-2' />
-                </Col>
-                <Col className='ibc-footer-col'>
-				<Link href='https://islandbeerclub.com' passHref>
-                    <Nav.Link>Island Beer Club</Nav.Link></Link>
-                </Col>
-            </Row>
-        </Container>
-		
+    <Container fluid>
+        <Row className='d-flex bg-dark text-light'>
+            <Col className='d-flex justify-content-center'>
+                <Image fluid src='/IBCLogo2.png' style={{height: '90px'}} className='m-2' />
+            </Col>
+            <Col sm={8} className='d-flex justify-content-center align-items-center'>
+                <Link  href='https://islandbeerclub.com' passHref>
+                    <Nav.Link style={{color: 'white'}}>
+                        Island Beer Club
+                    </Nav.Link>
+                </Link>
+            </Col>
+        </Row>
+    </Container>
 	)
 
 

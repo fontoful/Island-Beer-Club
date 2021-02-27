@@ -3,6 +3,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import LinkElement from './LinkElement'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell , faUser } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => (
     <>
@@ -33,7 +35,7 @@ const Navigation = () => (
       <LinkElement activeClassName='nav-link-active' href='/foundersDayPage' passHref>
         <Nav.Link>Founders Day</Nav.Link>
       </LinkElement>
-      <NavDropdown title={<del>More</del>} id='collasible-nav-dropdown'>
+      <NavDropdown title='More' id='collasible-nav-dropdown'>
         <LinkElement activeClassName='nav-link-active' href='/memberRegistration' passHref>
           <NavDropdown.Item>Member Registration</NavDropdown.Item>
         </LinkElement>
@@ -48,12 +50,12 @@ const Navigation = () => (
         </LinkElement>
       </NavDropdown>
     </Nav>
-    <Nav className='flex-fill-1 justify-content-end'>
+    <Nav className='flex-shrink justify-content-end'>
       <LinkElement activeClassName='nav-link-active' href='#' passHref>
-        <Nav.Link><del>Login In</del></Nav.Link>
+        <Nav.Link className='mx-1'><FontAwesomeIcon icon={faUser} /></Nav.Link>
       </LinkElement>
       <LinkElement activeClassName='nav-link-active' href='#' passHref>
-        <Nav.Link><del>Notifications</del></Nav.Link>
+        <Nav.Link className='mx-1'><FontAwesomeIcon icon={faBell} /></Nav.Link>
       </LinkElement>
     </Nav>
   </Navbar.Collapse>

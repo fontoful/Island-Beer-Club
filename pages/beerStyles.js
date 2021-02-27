@@ -8,8 +8,7 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
-const Styles = () => {
-	return (
+const Styles = () => (
 		<>
 			<Head>
 				<link
@@ -19,48 +18,48 @@ const Styles = () => {
 				<title>Island Beer Club | Styles</title>
 				<link rel='icon' href='/beer-solid.svg' />
 			</Head>
-			<Navigation />
 			<Container className='bg-white px-0'>
+				<Navigation />
 				<Jumbotron
 					fluid
-					className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 my-0'>
-					<p className='display-3'>Brewing Process and Beer Styles</p>
+					className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 my-0'
+				>
+					<p className='display-4 text-center'>Brewing Process & Beer Styles</p>
 				</Jumbotron>
 
-				<Row className='d-flex flex-column flex-grow-2 alert alert-secondary w-100'>
-					<Col className='d-flex flex-column justify-content-center align-items-center text-dark lead'>
-						<p className='blue-link'>
+				<Row className='d-flex flex-column bg-light text-dark m-auto'>
+					<Col className='p-2'>
+						<p className='text-center blue-link'>
 							Learn from the experts. Visit <a href='http://home.howstuffworks.com/beer1.htm'>How Stuff Works</a> for a illustrative presentation on the brewing process.
 						</p>
-						<h2>
-							Want help choosing your next beer?
-						</h2>
-						<Button size='xxl' variant='primary' href='http://www.keithandthegirl.com/forums/f6/beer-flowchart-14399/'>CLICK HERE</Button>
+					</Col>
+					<Col className='d-flex flex-column align-items-center pb-3'>
+						<h2>Want help choosing your next beer?</h2>
+						<Button size='lg' variant='primary' href='http://www.keithandthegirl.com/forums/f6/beer-flowchart-14399/'>CLICK HERE</Button>
 					</Col>
 				</Row>
 				<Row className='d-flex align-items-center w-100'>
 					<Col>
-						<p className='display-4 blue-link m-4'>
+						<p className='lead blue-link m-4'>
 							Below is a short list of beer styles available worldwide. For a broader overview and more extensive list go <a href='http://www.beerhunter.com/beerstyles.html'>The Beer Hunter</a> or to <a href='http://beeradvocate.com/beer/style'>The Beer Advocate</a>.
 						</p>
-						<div className='h-divider'></div>
 					</Col>
 				</Row>
-				<Row className='d-flex align-items-center w-100'>
-					<Col lg={6} xs={12} className='d-flex flex-column justify-content-center my-4'>
-
+				<div className='h-divider'></div>
+				<Row className='d-flex justify-content-center align-items-center m-auto w-100 p-3'>
+					<Col lg={6} xs={12} className='d-flex flex-column'>
 						<h2 className='display-4 b-fluff'>What's an Ale?</h2>
 						<p className='lead indent'>
 							This category of beer uses yeast that ferments at the "top" of the fermentation vessel, and typically at higher temperatures than lager yeast (60°-75°F), which, as a result, makes for a quicker fermentation period (7-8 days, or even less). Ale yeast are known to produce by-products called esters, which are "flowery" and "fruity" aromas ranging, but not limited to apple, pear, pineapple, grass, hay, plum, and prune.
 						</p>
 					</Col>
 					<Col lg={6} xs={12}>
-					<Image fluid className='shadow' src='ale-beer.jpg'></Image>
+						<Image fluid className='shadow' src='ale-beer.jpg'></Image>
 					</Col>
 				</Row>
 
-				<Row className='d-flex align-items-center flex-row-reverse w-100 my-4'>
-					<Col lg={6} xs={12} className='d-flex flex-column justify-content-center my-4'>
+				<Row className='d-flex align-items-center flex-row-reverse m-auto w-100 p-3'>
+					<Col lg={6} xs={12} className='d-flex flex-column justify-content-center'>
 						<h2 className='display-4 b-fluff align-self-end mr-4'>What's a Lager?</h2>
 						<p className='lead indent'>
 							The word lager comes from the German word lagern which means, "to store". A perfect description as lagers are brewed with bottom fermenting yeast that work slowly at around 34 degrees F, and are often further stored (up to 2 weeks or more) at cool temperature to mature. Lager yeast produce fewer by-product characters than ale yeast, which allows for other flavors to pull through, such as hops. Lagers have a soft clean taste. In general lagers are limited in diversity of style, and offered more as refreshers compared to ales.
@@ -71,7 +70,7 @@ const Styles = () => {
 					</Col>
 				</Row>
 
-				<Row className='d-flex flex-column justify-content-center align-itmes-center mx-4 my-4'>
+				<Row className='d-flex flex-column justify-content-center align-itmes-center mx-2 my-4'>
 					<Col className='d-flex flex-column justify-content-center my-4'>
 						<h1 className='b-fluff'>Barley Wine</h1>
 						<p className='lead'>
@@ -175,11 +174,9 @@ const Styles = () => {
 						</p>
 					</Col>
 				</Row>
+				<Footer />
 			</Container>
-
-			<Footer />
 		</>
 	)
-}
 
 export default Styles
