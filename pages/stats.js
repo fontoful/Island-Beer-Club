@@ -61,7 +61,7 @@ const Stats = props => {
 					</ul>
 				</Col>
 			</Row>
-			<Row className='d-flex flex-column bg-warning text-light text-center py-4 w-100'>
+			<Row className='d-flex flex-column bg-warning text-light text-center py-4 w-100 m-0'>
 			<Col className='lead'>
 				A low credit number below qualifies you to buy IBC's next keg.
 			</Col>
