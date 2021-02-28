@@ -32,7 +32,7 @@ const Header = (props) => {
         <Form>
           <Form.Group controlId="optinEmail">
             <Form.Control type="email" placeholder="Enter email" size='md' />
-            <Form.Text className="text-light h5 mt-2">
+            <Form.Text className="text-light mt-2 text-center">
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>

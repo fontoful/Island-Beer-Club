@@ -75,7 +75,7 @@ const Stats = props => {
 					<strong className='mr-1'>CIK =</strong>
 					<p>Credits-In-Kind</p>
 				</Col>
-				<Col className='pt-3'>
+				<Col className='pt-3 text-center'>
 			<blockquote className="blockquote">
 				<p className="lead mb-0">You are everyone's favorite member when it's your turn to buy.</p>
 				<footer className="blockquote-footer">--Crash Crenshaw<cite title="Source Title"></cite></footer>
@@ -83,24 +83,24 @@ const Stats = props => {
 			</Col>
 			</Row>
 
-			<Row  className='w-75 text-center'>
-				<Col>
-					<Table className='table-rounded table-hover' responsive>
-						<thead>
+			<Row  className='justify-content-md-center'>
+				<Col xs lg='8'>
+					<Table striped bordered hover className='table-rounded text-center'>
+						<thead className=''>
 							<tr>
-							<th>Count</th>
-							<th>Member</th>
-							<th>Mbr #</th>
-							<th>Credits</th>
+							<th className='align-middle'>Count</th>
+							<th className='align-middle'>Member</th>
+							<th className='align-middle'>Mbr #</th>
+							<th className='align-middle'>Credits</th>
 							</tr>
 						</thead>
 						<tbody>
 								{kegCredits.map(kegCredit => (
-								<tr key={kegCredit.pk}>
-									<td>{kegCredit.pk}</td>
-									<td>{kegCredit.name}</td>
-									<td>{kegCredit.mbrNumber}</td>
-									<td>{kegCredit.kic}</td>
+								<tr className='' key={kegCredit.pk}>
+									<td className='align-middle'>{kegCredit.pk}</td>
+									<td className='align-middle'>{kegCredit.name}</td>
+									<td className='align-middle'>{kegCredit.mbrNumber}</td>
+									<td className='align-middle'>{kegCredit.kic}</td>
 								</tr>
 								))}
 						</tbody>
@@ -108,12 +108,14 @@ const Stats = props => {
 				</Col>
 			</Row>
 <hr></hr>
-			<Row  className='w-75 text-center d-flex flex-column'>
-				<Col>
-				<p className='display-3'>Beer Consumed</p>
+			<Row  className='justify-content-md-center'>
+				<Col xs lg='6'>
+					<p className='lead text-center'>Beer Consumed</p>
 				</Col>
-				<Col>
-					<Table className='table-rounded table-hover' responsive>
+			</Row>
+			<Row className='justify-content-md-center'>
+				<Col xs='12' lg='8'>
+					<Table striped bordered hover responsive size="sm" className='table-rounded text-center'>
 						<thead>
 							<tr>
 							<th>Kegs</th>
@@ -127,12 +129,12 @@ const Stats = props => {
 						<tbody>
 								{kegConsumption.map(consumed => (
 								<tr key={consumed.kegs}>
-									<td>{consumed.kegs}</td>
-									<td>{consumed.purchased}</td>
-									<td>{consumed.delivered}</td>
-									<td>{consumed.finished}</td>
-									<td>{consumed.beerName}</td>
-									<td>{consumed.gallons}</td>
+									<td className='align-middle'>{consumed.kegs}</td>
+									<td className='align-middle'>{consumed.purchased}</td>
+									<td className='align-middle'>{consumed.delivered}</td>
+									<td className='align-middle'>{consumed.finished}</td>
+									<td className='align-middle'>{consumed.beerName}</td>
+									<td className='align-middle'>{consumed.gallons}</td>
 								</tr>
 								))}
 						</tbody>

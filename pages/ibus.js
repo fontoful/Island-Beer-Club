@@ -72,7 +72,7 @@ const Ibus = props => {
 			</p>
 			</Col>
 		</Row>
-		<Row className='bg-warning w-100'>
+		<Row className='bg-warning m-0 w-100'>
 			<Col>
 				<p className='h1 text-center my-4'>
 					If you don't see your beer style below let us know and We will add it.
@@ -80,9 +80,9 @@ const Ibus = props => {
 			</Col>
 		</Row>
 
-		<Row  className='w-75 text-center'>
-			<Col>
-				<Table className='table-rounded table-hover' responsive>
+		<Row  className='justify-content-md-center'>
+			<Col xs lg='6'>
+				<Table striped bordered hover responsive className='table-rounded text-center'>
 					<thead>
 						<tr>
 						<th>Beer Style</th>

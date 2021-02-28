@@ -65,7 +65,7 @@ const Profiles = props => {
         <title>Island Beer Club | Profiles</title>
         <link rel='icon' href='/beer-solid.svg' />
       </Head>
-      <Container fluid='sm' className='bg-light px-0'>
+      <Container className='bg-light px-0'>
         <Navigation />
         <Jumbotron fluid className='profile-jumbotron'>
           <p className='display-2'>Member Profiles</p>

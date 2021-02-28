@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/Col'
 
 const Intro = () => (
     <>
-    <Container fluid>
-        <Row className='py-3 bg-warning'>
+    <Container className='top-shadow my-rounded-top' fluid>
+        <Row className='py-3 my-rounded-top bg-warning top-shadow'>
           <Col className='mt-4'>
             <h2 className='text-center'>Remember, RULE #1: There ARE no rules</h2>
             <p className='text-center'><strong>How does one become a member?</strong>{' '}Buy a keg of hand-crafted beer.</p>

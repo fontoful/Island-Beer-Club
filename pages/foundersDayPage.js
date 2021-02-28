@@ -6,7 +6,7 @@ import {
     WeisbrodModal, 
     KayeModal, 
     StricklandModal 
-} from './components/modals'
+} from './components/Modals'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
