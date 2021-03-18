@@ -2,12 +2,12 @@ import React,{useState,useEffect} from 'react'
 import { loadIbuData } from './api/ibus'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
+import NavHandler from '../components/NavHandler'
+import getNotificationData from './api/notifications'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
+import Footer from '../components/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWeight, faChartBar, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -17,7 +17,7 @@ import Table from 'react-bootstrap/Table'
 const Ibus = props => {
 	const router = useRouter()
 	const [ibuData, setIbuData] = useState(props.ibuData)
-	//console.log(props)
+	const [notificationData, setNotificationData] = useState(props.notificationData)
 	return (
 		<>
 		<Head>
@@ -28,7 +28,7 @@ const Ibus = props => {
 		<title>Island Beer Club | IBU's</title>
 		<link rel='icon' href='/beer-solid.svg' />
 	</Head>
-	<Navigation />
+	<NavHandler notifications={notificationData} />
 	<Container className='bg-white px-0'>
 		<Jumbotron
 			fluid
@@ -112,9 +112,11 @@ const Ibus = props => {
 export const getServerSideProps = async ctx => {
 	const { query } = ctx
 	const ibuData = await loadIbuData(query)
+	const notificationData = await getNotificationData(query)
 	return {
 		props: {
-			ibuData
+			ibuData,
+			notificationData,
 		}
 	}
 }

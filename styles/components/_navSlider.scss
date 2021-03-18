@@ -1,0 +1,54 @@
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.navSlider {
+  background-color: #fafafa;
+  box-shadow: 4px 0 10px 0 rgba(0, 0, 0, 0.2), 
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 100%;
+  width: 80%;
+  position: static;
+}
+
+.nav-link {
+  color: #292929;
+  margin: 6px 0;
+}
+
+@media only screen and (max-width: 768px ) {
+  .navbar {
+      display: flex;
+      flex-direction: column;
+  }
+  .nav-link-active {
+      background: #292929;
+  }
+}
+
+.nav-link:hover {
+  background: rgb(107, 106, 106);
+  color: #6b6b6b;
+}
+
+.notifications {
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 375px ) {
+  .notifications {
+      overflow: scroll;
+  }
+}

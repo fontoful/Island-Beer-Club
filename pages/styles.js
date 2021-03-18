@@ -1,14 +1,20 @@
 import Head from 'next/head'
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
+import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
+import NavHandler from '../components/NavHandler'
+import getNotificationData from './api/notifications'
 
-const Styles = () => (
+const Styles = ({ notificationData }) => {
+
+	const notifications = notificationData
+
+	return (
 		<>
 			<Head>
 				<link
@@ -18,15 +24,14 @@ const Styles = () => (
 				<title>Island Beer Club | Styles</title>
 				<link rel='icon' href='/beer-solid.svg' />
 			</Head>
+			<NavHandler notifications={notificationData} />
+			<Jumbotron
+				fluid
+				className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 my-0'
+			>
+				<p className='h2 text-center'>Brewing Process & Beer Styles</p>
+			</Jumbotron>
 			<Container className='bg-white px-0'>
-				<Navigation />
-				<Jumbotron
-					fluid
-					className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 my-0'
-				>
-					<p className='display-4 text-center'>Brewing Process & Beer Styles</p>
-				</Jumbotron>
-
 				<Row className='d-flex flex-column bg-light text-dark m-auto'>
 					<Col className='p-2'>
 						<p className='text-center blue-link'>
@@ -34,12 +39,12 @@ const Styles = () => (
 						</p>
 					</Col>
 					<Col className='d-flex flex-column align-items-center pb-3'>
-						<h2>Want help choosing your next beer?</h2>
+						<h2 className='text-center'>Want help choosing your next beer?</h2>
 						<Button size='lg' variant='primary' href='http://www.keithandthegirl.com/forums/f6/beer-flowchart-14399/'>CLICK HERE</Button>
 					</Col>
 				</Row>
-				<Row className='d-flex align-items-center w-100'>
-					<Col>
+				<Row className='w-100'>
+					<Col className='d-flex align-items-center justify-content-center'>
 						<p className='lead blue-link m-4'>
 							Below is a short list of beer styles available worldwide. For a broader overview and more extensive list go <a href='http://www.beerhunter.com/beerstyles.html'>The Beer Hunter</a> or to <a href='http://beeradvocate.com/beer/style'>The Beer Advocate</a>.
 						</p>
@@ -48,7 +53,7 @@ const Styles = () => (
 				<div className='h-divider'></div>
 				<Row className='d-flex justify-content-center align-items-center m-auto w-100 p-3'>
 					<Col lg={6} xs={12} className='d-flex flex-column'>
-						<h2 className='display-4 b-fluff'>What's an Ale?</h2>
+						<h2 className='h2 b-fluff'>What's an Ale?</h2>
 						<p className='lead indent'>
 							This category of beer uses yeast that ferments at the "top" of the fermentation vessel, and typically at higher temperatures than lager yeast (60°-75°F), which, as a result, makes for a quicker fermentation period (7-8 days, or even less). Ale yeast are known to produce by-products called esters, which are "flowery" and "fruity" aromas ranging, but not limited to apple, pear, pineapple, grass, hay, plum, and prune.
 						</p>
@@ -60,7 +65,7 @@ const Styles = () => (
 
 				<Row className='d-flex align-items-center flex-row-reverse m-auto w-100 p-3'>
 					<Col lg={6} xs={12} className='d-flex flex-column justify-content-center'>
-						<h2 className='display-4 b-fluff align-self-end mr-4'>What's a Lager?</h2>
+						<h2 className='h2 b-fluff align-self-end mr-4'>What's a Lager?</h2>
 						<p className='lead indent'>
 							The word lager comes from the German word lagern which means, "to store". A perfect description as lagers are brewed with bottom fermenting yeast that work slowly at around 34 degrees F, and are often further stored (up to 2 weeks or more) at cool temperature to mature. Lager yeast produce fewer by-product characters than ale yeast, which allows for other flavors to pull through, such as hops. Lagers have a soft clean taste. In general lagers are limited in diversity of style, and offered more as refreshers compared to ales.
 						</p>
@@ -178,5 +183,16 @@ const Styles = () => (
 			</Container>
 		</>
 	)
+}
+
+export const getServerSideProps = async ctx => {
+	const { query } = ctx
+	const notificationData = await getNotificationData(query)
+	return {
+		props: {
+			notificationData
+		}
+	}
+}
 
 export default Styles

@@ -2,10 +2,9 @@ import React,{useState,useEffect} from 'react'
 import { loadKegCredits } from './api/credits'
 import { loadKegConsumption } from './api/consumption'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
-
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
+import NavHandler from '../components/NavHandler'
+import getNotificationData from './api/notifications'
+import Footer from '../components/Footer'
 import { 
 	Col,
 	Container,
@@ -15,9 +14,9 @@ import {
 } from 'react-bootstrap'
 
 const Stats = props => {
-	const router = useRouter()
 	const [kegCredits, setKegCredits] = useState(props.kegCredits)
 	const [kegConsumption, setKegConsumption] = useState(props.kegConsumption)
+	const [notificationData, setNotificationData] = useState(props.notificationData)
 
 	//Trying to Sum up the total number of gallons consumed??
 	let sumGallons = kegConsumption.map(g => g.gallons)
@@ -30,16 +29,17 @@ const Stats = props => {
 		<link rel='icon' href='/beer-solid.svg' />
 		</Head>
 
-		<Container className='bg-white px-0'>
-		<Navigation />
+		<NavHandler notifications={notificationData} />
+		
 			<Jumbotron
 				fluid
-				className='d-flex justify-content-center align-items-center text-light beer-cheer w-100'
+				className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 mb-0'
 			>
-				<p className='display-3 text-center'>Keg Credits Since Inception</p>
+				<p className='h2 text-center'>Keg Credits Since Inception</p>
 			</Jumbotron>
 
-			<Row className='mx-auto my-4'>
+			<Container fluid className='bg-white px-0'>
+			<Row className='mx-auto'>
 				<Col className='d-flex flex-row justify-content-center align-items-center'>
 					<p className='display-4 mr-2'>Rule #1</p>
 					<p className='lead align-self-center mt-1'>There ARE no rules.</p>
@@ -67,9 +67,9 @@ const Stats = props => {
 			</Col>
 			</Row>
 
-			<Row className='d-flex flex-column my-4'>
+			<Row className='d-flex flex-column w-100'>
 				<Col className='text-center'>
-					<p className='display-4'>Legend:</p>
+					<p className='h2'>Legend:</p>
 				</Col>
 				<Col className='d-flex flex-row justify-content-center align-items-baseline lead'>
 					<strong className='mr-1'>CIK =</strong>
@@ -82,8 +82,7 @@ const Stats = props => {
 			</blockquote>
 			</Col>
 			</Row>
-
-			<Row  className='justify-content-md-center'>
+			<Row  className='mx-auto w-100'>
 				<Col xs lg='8'>
 					<Table striped bordered hover className='table-rounded text-center'>
 						<thead className=''>
@@ -107,13 +106,13 @@ const Stats = props => {
 					</Table>
 				</Col>
 			</Row>
-<hr></hr>
-			<Row  className='justify-content-md-center'>
-				<Col xs lg='6'>
-					<p className='lead text-center'>Beer Consumed</p>
+			<hr></hr>
+			<Row className='w-100'>
+				<Col>
+				<p className='lead text-center'>Beer Consumed</p>
 				</Col>
 			</Row>
-			<Row className='justify-content-md-center'>
+			<Row className='justify-content-md-center p-0 m-0 w-100'>
 				<Col xs='12' lg='8'>
 					<Table striped bordered hover responsive size="sm" className='table-rounded text-center'>
 						<thead>
@@ -141,8 +140,8 @@ const Stats = props => {
 					</Table>
 				</Col>
 			</Row>
-		<Footer />
 		</Container>
+				<Footer />
 		</>
 	)
 }
@@ -151,10 +150,12 @@ export const getServerSideProps = async ctx => {
 	const { query } = ctx
 	const kegCredits = await loadKegCredits(query)
 	const kegConsumption = await loadKegConsumption(query)
+	const notificationData = await getNotificationData(query)
 	return {
 		props: {
 			kegCredits,
-			kegConsumption
+			kegConsumption,
+			notificationData,
 		},
 	}
 }
