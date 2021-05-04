@@ -23,7 +23,7 @@
     "package.json": "^2.0.1",
     "popper.js": "^1.16.1",
     "react": "17.0.1",
-    "react-bootstrap": "^1.4.0",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "17.0.1",
     "react-hook-form": "^6.12.2",
     "react-modal": "^3.12.1",

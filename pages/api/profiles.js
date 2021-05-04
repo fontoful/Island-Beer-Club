@@ -9,7 +9,7 @@ export const loadProfiles = async (query = {}) => {
 		.firestore()
 		.collection('profilesTest')
 		//.where('is_member', '==', 'true')
-		.orderBy('mbr', 'asc')
+		.orderBy('id', 'asc')
 		.get()
 
 	let profiles = docsSnap.docs.map(doc => doc.data())

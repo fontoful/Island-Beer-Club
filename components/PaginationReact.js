@@ -10,7 +10,7 @@ const PaginationReact = ({ profilesPerPage, totalProfiles, paginate }) => {
 
   return (
     <div>
-      <ul className='pagination pt-3'>
+      <ul className='pagination pt-3 d-flex flex-wrap justify-content-center align-items-center'>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
             <a onClick={() => paginate(number)} href='#' className='page-link'>

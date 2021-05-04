@@ -1,8 +1,14 @@
-.profile-jumbotron {
-    background:
-    radial-gradient(rgba(0, 0, 0, 0.4), 
-    rgba(0, 0, 0, 0.4)), 
-    url(/beerCheer.jpg);
+.beer-sky-header {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(/beer1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 300px;
 }
 .profile-search__form {
     display: flex;

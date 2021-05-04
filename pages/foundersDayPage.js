@@ -21,12 +21,10 @@ const FoundersDayPage = ({ notificationData }) => {
                 <link rel="icon" href="/beer-solid.svg" />
             </Head>
             <NavHandler notifications={notificationData} />
-
+            <Container className='bg-white px-0'>
             <Jumbotron fluid className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 mb-0'>
                 <p className='h2'>IBC Founders Day</p>
             </Jumbotron>
-
-            <Container fluid className='bg-white px-0'>
             <Row className='mx-auto'>
                 <Col className='d-flex flex-column justify-content-center align-items-center pt-2'>
                     <p className='h4 text-center'>Founders Day Beginnings</p>

@@ -9,6 +9,7 @@ import PaginationReact from '../components/PaginationReact'
 import { Pagination } from 'react-bootstrap'
 import { Button, Col, Container, Form, Image, Jumbotron, Row, Tab, Tabs } from 'react-bootstrap'
 
+// fetch profile images
 const getUrl = pathToFile => {
   const bucket = 'island-beer-club.appspot.com'
   const img = pathToFile
@@ -17,6 +18,8 @@ const getUrl = pathToFile => {
     img,
   )}?alt=media&token=${downloadToken}`
 }
+
+
 
 const Profiles = props => {
   const router = useRouter()
@@ -62,10 +65,10 @@ const Profiles = props => {
         <link rel='icon' href='/beer-solid.svg' />
       </Head>
       <NavHandler notifications={notificationData} />
-      <Jumbotron fluid className='d-flex align-items-center justify-content-center text-light profile-jumbotron mb-0'>
+      <Container className='bg-white px-0'>
+      <Jumbotron fluid className='d-flex justify-content-center align-items-center text-light beer-sky-header w-100 mb-0'>
         <p className='h2'>Member Profiles</p>
       </Jumbotron>
-      <Container fluid className='bg-white'>
         <Row className='d-flex flex-column mb-4'>
           <Col cl>
             <Form className='profile-search__form' onSubmit={handleFormSubmit}>
@@ -91,7 +94,7 @@ const Profiles = props => {
                   <Image
                     className='profile-img shadow'
                     src={getUrl(profile.img)}
-                    style={{borderStyle:'solid', borderColor: 'white', borderRadius: '.2rem'}}
+                    style={{ borderStyle: 'solid', borderColor: 'white', borderRadius: '.2rem' }}
                   />
                   <div className='profile-stats text-light'>
                     <h4>{profile.name} </h4>
@@ -103,41 +106,55 @@ const Profiles = props => {
                   </div>
                 </div>
 
-                  <Tabs className='d-flex flex-row' defaultActiveKey='bio'>
-                    <Tab eventKey='bio' title='Bio' className='profile-body'>
-                      {profile.bio.length === 0 ? 'No bio.' : profile.bio}
-                    </Tab>
-                    <Tab eventKey='likes' title='Likes' className='profile-body'>
-                      {profile.likes.length === 0 ? 'No likes.' : profile.likes}
-                    </Tab>
-                    <Tab
-                      eventKey='dislikes'
-                      title='Dislikes'
-                      className='profile-body'
-                    >
-                      {profile.dislikes.length === 0
-                        ? 'No dislikes.'
-                        : profile.dislikes}
-                    </Tab>
-                    <Tab
-                      eventKey='hobbies'
-                      title='Hobbies'
-                      className='profile-body'
-                    >
-                      {profile.hobbies.length === 0
-                        ? 'No hobbies.'
-                        : profile.hobbies}
-                    </Tab>
-                    <Tab
-                      eventKey='nicknames'
-                      title='Nicknames'
-                      className='profile-body'
-                    >
-                      {profile.nicknames.length === 0
-                        ? 'No nicknames.'
-                        : profile.nicknames}
-                    </Tab>
-                  </Tabs>
+                <Tabs className='d-flex flex-row' defaultActiveKey='bio'>
+                  <Tab eventKey='bio' title='Bio' className='profile-body'>
+                    {
+                      profile.bio === undefined
+                      ? 'No bio'
+                      : profile.bio
+                    }
+                  </Tab>
+                  <Tab eventKey='likes' title='Likes' className='profile-body'>
+                    {
+                      profile.likes === undefined
+                      ? 'No likes'
+                      : profile.likes
+                    }
+                  </Tab>
+                  <Tab
+                    eventKey='dislikes'
+                    title='Dislikes'
+                    className='profile-body'
+                  >
+                    {
+                      profile.dislikes === undefined
+                      ? 'No dislikes'
+                      : profile.dislikes
+                    }
+                  </Tab>
+                  <Tab
+                    eventKey='hobbies'
+                    title='Hobbies'
+                    className='profile-body'
+                  >
+                    {
+                      profile.hobbies === undefined 
+                      ? 'No hobbies' 
+                      : profile.hobbies
+                    }
+                  </Tab>
+                  <Tab
+                    eventKey='nicknames'
+                    title='Nicknames'
+                    className='profile-body'
+                  >
+                    { profile.nicknames
+                      // profile.nicknames.length === 0
+                      // ? 'No nicknames.'
+                      // : profile.nicknames
+                    }
+                  </Tab>
+                </Tabs>
               </div>
             ))}
           </Col>

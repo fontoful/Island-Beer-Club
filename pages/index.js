@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import Head from 'next/head'
-import Container from 'react-bootstrap/Container'
 import getNotificationData from './api/notifications'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -8,6 +7,7 @@ import NavHandler from '../components/NavHandler'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faBeer, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import {
+	Container,
 	Row,
 	ResponsiveEmbed,
 	Image,
@@ -29,15 +29,14 @@ const Home = ({notificationData}) => {
 				<link rel='icon' href='/beer-solid.svg' />
 			</Head>
 			<NavHandler notifications={notificationData} />
+			<Container className='bg-light'>
 			<Header
 				title='For Members Only'
 				subtitle='Opt-in here to receive our periodic eGram'
 				radialGradient='rgba(10, 13, 180, 0.4), rgba(47, 143, 68, 0.4)'
 				backgroundImage='/beerClubFounders1.jpg'
-				height='60vh'
 			/>
-			<Container fluid className='container__indexPage'>
-				<Row className='py-3 my-rounded-top bg-warning top-shadow'>
+				<Row className='py-3 mt-n4 my-rounded-top bg-warning top-shadow'>
 					<Col className='mt-4'>
 						<h2 className='text-center'>Remember, RULE #1: There ARE no rules</h2>
 						<p className='text-center'><strong>How does one become a member?</strong>{' '}Buy a keg of hand-crafted beer.</p>
@@ -179,7 +178,7 @@ const Home = ({notificationData}) => {
                     </Button>
 					</Col>
 				</Row>
-
+				<div className='h-divider'></div>
 				<Row className='flex-row justify-content-center flex-grow-1 py-5'>
 					<Col lg={6} xs={12} className='d-flex flex-column justify-content-center align-items-center'>
 						<Image rounded src='/Hop.png' className='mx-auto d-block my-3' style={{ maxWidth: '50%', height: 'auto' }} />

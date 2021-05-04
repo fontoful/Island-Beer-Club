@@ -17,13 +17,13 @@ const History = ({ notificationData }) => {
 				<link rel='icon' href='/beer-solid.svg' />
 			</Head>
 			<NavHandler notifications={notificationData} />
+			<Container className='bg-white px-0'>
 			<Jumbotron
 				fluid
 				className='d-flex justify-content-center align-items-center text-light beer-cheer w-100 mb-0'
 			>
 				<p className='h2'>Beer Club Histroy</p>
 			</Jumbotron>
-			<Container fluid className='bg-white px-0'>
 				<Row className='d-flex flex-column w-100'>
 					<Col className='text-dark'>
 						<Image
