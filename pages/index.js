@@ -188,7 +188,7 @@ const Home = ({notificationData}) => {
 						<p className='text-center mb-3'>
 							Want to learn from the experts? Visit the link below for an illustrative presentation on the brewing process.</p>
 						<Button
-							href='/beerStyles'
+							href='/styles'
 							variant='outline-success'
 							className='text-center mt-3'
 							size='lg'>
