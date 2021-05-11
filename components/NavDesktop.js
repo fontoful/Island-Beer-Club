@@ -21,7 +21,7 @@ const NavDesktop = (props) => {
         </Navbar.Brand>
           <Navigation />
         <Nav className='flex-shrink justify-content-end'>
-          <LinkElement activeClassName='nav-link-active' href='/sign-in' passHref>
+          <LinkElement activeClassName='nav-link-active' href='http://localhost:3001/' passHref>
             <Nav.Link className='mx-1'><FontAwesomeIcon icon={faUser} /></Nav.Link>
           </LinkElement>
           <LinkElement activeClassName='nav-link-active' href='#' passHref>

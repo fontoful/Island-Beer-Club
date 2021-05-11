@@ -6,8 +6,7 @@ import Head from 'next/head'
 import Footer from '../components/Footer'
 import NavHandler from '../components/NavHandler'
 import PaginationReact from '../components/PaginationReact'
-import { Pagination } from 'react-bootstrap'
-import { Button, Col, Container, Form, Image, Jumbotron, Row, Tab, Tabs } from 'react-bootstrap'
+import { Button, Col, Container, Form, Image, Jumbotron, Pagination, Row, Tab, Tabs } from 'react-bootstrap'
 
 // fetch profile images
 const getUrl = pathToFile => {
@@ -26,7 +25,7 @@ const Profiles = props => {
   const [profiles, setProfiles] = useState(props.profiles)
   const [notificationData, setNotifications] = useState(props.notificationData)
   const [currentPage, setCurrentPage] = useState(1)
-  const [profilesPerPage] = useState(5)
+  const [profilesPerPage] = useState(10)
 
   //! Logic for the pagination
   const indexOfLastProfile = currentPage * profilesPerPage
@@ -56,7 +55,7 @@ const Profiles = props => {
     })
   }
 
-  const paginate = pageNumber => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   return (
     <>
@@ -165,6 +164,7 @@ const Profiles = props => {
               paginate={paginate}
               totalProfiles={profiles.length}
               profilesPerPage={profilesPerPage}
+
             />
           </Col>
         </Row>

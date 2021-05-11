@@ -19,7 +19,7 @@ const MemberRegistration = () => {
   })
 
   const onSubmit = data => {
-    db.collection('profilesTest')
+    db.collection('user-test')
       .add({
         ...data,
         is_member: false,
@@ -133,7 +133,7 @@ const MemberRegistration = () => {
                     placeholder='Phone Number'
                     guide={false}
                     id='my-input-id'
-                    onBlur={() => {}}
+                    onBlur={() => { }}
                     onChange={() => {
                       // const saveItem = localStorage.setItem(defaultValue)
                     }}
@@ -181,46 +181,74 @@ const MemberRegistration = () => {
               <p className='display-4'>Tell us about yourself...</p>
 
               <div className='member-reg-row pt-4 w-85'>
+                <div className='error-box'>
+                  {errors.bio && (
+                    <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
+                  )}
+                </div>
                 <div className='member-reg-group__textarea'>
                   <label className='member-reg__label'>Bio:</label>
                   <textarea
                     className='member-reg__textarea'
                     type='text'
                     name='bio'
-                    ref={register}
+                    ref={register({
+                      required: true
+                    })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
+              <div className='error-box'>
+                  {errors.likes && (
+                    <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
+                  )}
+                </div>
                 <div className='member-reg-group__textarea'>
                   <label className='member-reg__label'>Likes:</label>
                   <textarea
                     className='member-reg__textarea'
                     type='text'
                     name='likes'
-                    ref={register}
+                    ref={register({
+                      required: true
+                    })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
+              <div className='error-box'>
+                  {errors.dislikes && (
+                    <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
+                  )}
+                </div>
                 <div className='member-reg-group__textarea'>
                   <label className='member-reg__label'>Disikes:</label>
                   <textarea
                     className='member-reg__textarea'
                     type='text'
                     name='dislikes'
-                    ref={register}
+                    ref={register({
+                      required: true
+                    })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
+              <div className='error-box'>
+                  {errors.hobbies && (
+                    <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
+                  )}
+                </div>
                 <div className='member-reg-group__textarea'>
                   <label className='member-reg__label'>Hobbies:</label>
                   <textarea
                     className='member-reg__textarea'
                     type='text'
                     name='hobbies'
-                    ref={register}
+                    ref={register({
+                      required: true
+                    })}
                   />
                 </div>
               </div>
