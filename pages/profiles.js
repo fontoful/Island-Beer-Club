@@ -6,7 +6,18 @@ import Head from 'next/head'
 import Footer from '../components/Footer'
 import NavHandler from '../components/NavHandler'
 import PaginationReact from '../components/PaginationReact'
-import { Button, Col, Container, Form, Image, Jumbotron, Pagination, Row, Tab, Tabs } from 'react-bootstrap'
+import {
+  Button,
+  Col,
+  Container,
+  Form,
+  Image,
+  Jumbotron,
+  Pagination,
+  Row,
+  Tab,
+  Tabs,
+} from 'react-bootstrap'
 
 // fetch profile images
 const getUrl = pathToFile => {
@@ -15,12 +26,8 @@ const getUrl = pathToFile => {
   let silhouette = 'resources/SilhouetteM100.png'
   let img = pathToFile === undefined ? silhouette : pathToFile
   let downloadToken = `?alt=media&token=${1}`
-  console.log('Status Code', response.status)
   return `${fbStorage}${bucket}/o/${encodeURIComponent(img)}${downloadToken}`
-  
 }
-
-
 
 const Profiles = props => {
   const router = useRouter()
@@ -57,7 +64,7 @@ const Profiles = props => {
     })
   }
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const paginate = pageNumber => setCurrentPage(pageNumber)
 
   return (
     <>
@@ -67,9 +74,12 @@ const Profiles = props => {
       </Head>
       <NavHandler notifications={notificationData} />
       <Container className='bg-white px-0'>
-      <Jumbotron fluid className='d-flex justify-content-center align-items-center text-light beer-sky-header w-100 mb-0'>
-        <p className='h2'>Member Profiles</p>
-      </Jumbotron>
+        <Jumbotron
+          fluid
+          className='d-flex justify-content-center align-items-center text-light beer-sky-header w-100 mb-0'
+        >
+          <p className='h2'>Member Profiles</p>
+        </Jumbotron>
         <Row className='d-flex flex-column mb-4'>
           <Col cl>
             <Form className='profile-search__form' onSubmit={handleFormSubmit}>
@@ -83,7 +93,7 @@ const Profiles = props => {
               />
               <Button type='submit' size='lg' variant='secondary'>
                 Search
-          </Button>
+              </Button>
             </Form>
           </Col>
         </Row>
@@ -95,7 +105,11 @@ const Profiles = props => {
                   <Image
                     className='profile-img shadow'
                     src={getUrl(profile.img)}
-                    style={{ borderStyle: 'solid', borderColor: 'white', borderRadius: '.2rem' }}
+                    style={{
+                      borderStyle: 'solid',
+                      borderColor: 'white',
+                      borderRadius: '.2rem',
+                    }}
                   />
                   <div className='profile-stats text-light'>
                     <h4>{profile.name} </h4>
@@ -109,47 +123,36 @@ const Profiles = props => {
 
                 <Tabs className='d-flex flex-row' defaultActiveKey='bio'>
                   <Tab eventKey='bio' title='Bio' className='profile-body'>
-                    {
-                      profile.bio === undefined
-                      ? 'No bio'
-                      : profile.bio
-                    }
+                    {profile.bio === undefined ? 'No bio' : profile.bio}
                   </Tab>
                   <Tab eventKey='likes' title='Likes' className='profile-body'>
-                    {
-                      profile.likes === undefined
-                      ? 'No likes'
-                      : profile.likes
-                    }
+                    {profile.likes === undefined ? 'No likes' : profile.likes}
                   </Tab>
                   <Tab
                     eventKey='dislikes'
                     title='Dislikes'
                     className='profile-body'
                   >
-                    {
-                      profile.dislikes === undefined
+                    {profile.dislikes === undefined
                       ? 'No dislikes'
-                      : profile.dislikes
-                    }
+                      : profile.dislikes}
                   </Tab>
                   <Tab
                     eventKey='hobbies'
                     title='Hobbies'
                     className='profile-body'
                   >
-                    {
-                      profile.hobbies === undefined 
-                      ? 'No hobbies' 
-                      : profile.hobbies
-                    }
+                    {profile.hobbies === undefined
+                      ? 'No hobbies'
+                      : profile.hobbies}
                   </Tab>
                   <Tab
                     eventKey='nicknames'
                     title='Nicknames'
                     className='profile-body'
                   >
-                    { profile.nicknames
+                    {
+                      profile.nicknames
                       // profile.nicknames.length === 0
                       // ? 'No nicknames.'
                       // : profile.nicknames
@@ -161,9 +164,9 @@ const Profiles = props => {
           </Col>
         </Row>
         <Row className='d-flex flex-column mx-0 bg-secondary'>
-        <Col className='text-center text-light pt-2'>
-        <h3>Member Profiles</h3>
-        </Col>
+          <Col className='text-center text-light pt-2'>
+            <h3>Member Profiles</h3>
+          </Col>
           <Col className='d-flex flex-wrap justify-content-center align-items-center p-1'>
             <PaginationReact
               paginate={paginate}
