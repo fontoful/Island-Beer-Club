@@ -10,12 +10,14 @@ import { Button, Col, Container, Form, Image, Jumbotron, Pagination, Row, Tab, T
 
 // fetch profile images
 const getUrl = pathToFile => {
-  const bucket = 'island-beer-club.appspot.com'
-  const img = pathToFile
-  const downloadToken = 1
-  return `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodeURIComponent(
-    img,
-  )}?alt=media&token=${downloadToken}`
+  let fbStorage = 'https://firebasestorage.googleapis.com/v0/b/'
+  let bucket = 'island-beer-club.appspot.com'
+  let silhouette = 'resources/SilhouetteM100.png'
+  let img = pathToFile === undefined ? silhouette : pathToFile
+  let downloadToken = `?alt=media&token=${1}`
+  console.log('Status Code', response.status)
+  return `${fbStorage}${bucket}/o/${encodeURIComponent(img)}${downloadToken}`
+  
 }
 
 
@@ -88,7 +90,7 @@ const Profiles = props => {
         <Row>
           <Col className='d-flex justify-content-center flex-wrap align-content-stretch mt-2'>
             {currentProfiles.map(profile => (
-              <div key={profile.mbr} className='profile-card shadow'>
+              <div key={profile.id} className='profile-card shadow'>
                 <div className='profile-header'>
                   <Image
                     className='profile-img shadow'
@@ -158,18 +160,20 @@ const Profiles = props => {
             ))}
           </Col>
         </Row>
-        <Row>
-          <Col className='d-flex justify-content-center align-items-center bg-secondary'>
+        <Row className='d-flex flex-column mx-0 bg-secondary'>
+        <Col className='text-center text-light pt-2'>
+        <h3>Member Profiles</h3>
+        </Col>
+          <Col className='d-flex flex-wrap justify-content-center align-items-center p-1'>
             <PaginationReact
               paginate={paginate}
               totalProfiles={profiles.length}
               profilesPerPage={profilesPerPage}
-
             />
           </Col>
         </Row>
+        <Footer />
       </Container>
-      <Footer />
     </>
   )
 }

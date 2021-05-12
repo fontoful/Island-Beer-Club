@@ -1,0 +1,13 @@
+.paginate {
+  padding: 0px 2px;
+  color: azure;
+  border: 1px darkgray;
+  border-style: solid solid solid;
+  margin: 2px 2px;
+  border-radius: 3px;
+  width: 75px;
+}
+
+.paginate:hover {
+  color: $light-gray;
+}

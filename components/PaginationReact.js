@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col, Row} from 'react-bootstrap'
 
 const PaginationReact = ({ profilesPerPage, totalProfiles, paginate }) => {
   // init array
@@ -9,22 +10,21 @@ const PaginationReact = ({ profilesPerPage, totalProfiles, paginate }) => {
   }
  
   return (
-    <div>
-      <ul className='pagination pt-3 d-flex flex-wrap justify-content-center align-items-center'>
+    <>
         {
           pageNumbers.map(number => {
-            let y = Math.ceil(number * 10 - 9)
-            let x = Math.ceil(number * 10)
+            let difference = profilesPerPage -1
+            let firstNumber = Math.ceil(number * profilesPerPage - difference)
+            let lastNumber = Math.ceil(number * profilesPerPage)
             return(
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='#' className='page-link'>
-              {`${y}-${x}`}
+          
+            <a key={number} onClick={() => paginate(number)} href='#' className='paginate d-flex align-items-center justify-content-center'>
+              {`${firstNumber}-${lastNumber <= totalProfiles ? lastNumber : totalProfiles}`}
             </a>
-          </li>
+
         )})
       }
-      </ul>
-    </div>
+    </> 
   )
 }
 
