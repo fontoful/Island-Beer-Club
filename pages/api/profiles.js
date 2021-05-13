@@ -7,7 +7,7 @@ export const loadProfiles = async (query = {}) => {
 
   let docsSnap = await firebase
     .firestore()
-    .collection('user-data')
+    .collection('user-test-data')
     //.where('is_member', '==', 'true')
     .orderBy('mbr', 'asc')
     .get()
@@ -26,7 +26,7 @@ export const loadProfiles = async (query = {}) => {
   return profiles
 }
 
-export default async (req, res) => {
+async (req, res) => {
   const output = {
     profiles: await loadProfiles(req.query),
   }
@@ -34,3 +34,7 @@ export default async (req, res) => {
   res.setHeader('Content-Type', 'application/json')
   res.end(JSON.stringify(output))
 }
+
+const storage = firebase.storage()
+const storageRef = storage.ref()
+export {storageRef}

@@ -3,7 +3,6 @@ import React from 'react'
 import Footer from '../components/Footer'
 import NavHandler from '../components/NavHandler'
 import getNotificationData from './api/notifications'
-import Header from '../components/Header'
 import { Col, Container, Image, Jumbotron, Row, } from 'react-bootstrap'
 
 const History = ({ notificationData }) => {

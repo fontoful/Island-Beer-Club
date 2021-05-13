@@ -1,25 +1,21 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { db } from '../lib/firebase'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import MaskedInput from 'react-text-mask'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
-import Image from 'react-bootstrap/Image'
-import Row from 'react-bootstrap/Row'
+import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 import Swal from 'sweetalert2'
 
-const MemberRegistration = () => {
+const MemberRegistration = props => {
   const { register, handleSubmit, errors } = useForm({
     mode: 'onBlur',
   })
 
   const onSubmit = data => {
-    db.collection('user-test')
+    db.collection('user-test-data')
       .add({
         ...data,
         is_member: false,

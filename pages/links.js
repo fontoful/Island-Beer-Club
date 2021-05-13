@@ -1,16 +1,13 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Navigation from '../components/navbar'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Links = () => (
 	<>
 		<Head>
 			<title>Island Beer Club | Links</title>
 		</Head>
-
-		<Navigation />
 
 		<Header />
 
@@ -149,8 +146,8 @@ const Links = () => (
 					</ul>
 				</Col>
 			</Row>
+			<Footer />
 		</Container>
-		<Footer />
 	</>
 )
 

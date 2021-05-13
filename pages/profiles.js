@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, } from 'next/router'
 import { loadProfiles } from './api/profiles'
 import getNotificationData from './api/notifications'
 import Head from 'next/head'
@@ -13,13 +13,19 @@ import {
   Form,
   Image,
   Jumbotron,
-  Pagination,
   Row,
   Tab,
   Tabs,
 } from 'react-bootstrap'
 
-// fetch profile images
+const Profiles = props => {
+  const router = useRouter()
+  const [profiles, setProfiles] = useState(props.profiles)
+  const [notificationData, setNotifications] = useState(props.notificationData)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [profilesPerPage] = useState(10)
+
+  // fetch profile images
 const getUrl = pathToFile => {
   let fbStorage = 'https://firebasestorage.googleapis.com/v0/b/'
   let bucket = 'island-beer-club.appspot.com'
@@ -28,13 +34,6 @@ const getUrl = pathToFile => {
   let downloadToken = `?alt=media&token=${1}`
   return `${fbStorage}${bucket}/o/${encodeURIComponent(img)}${downloadToken}`
 }
-
-const Profiles = props => {
-  const router = useRouter()
-  const [profiles, setProfiles] = useState(props.profiles)
-  const [notificationData, setNotifications] = useState(props.notificationData)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [profilesPerPage] = useState(10)
 
   //! Logic for the pagination
   const indexOfLastProfile = currentPage * profilesPerPage
@@ -103,6 +102,7 @@ const Profiles = props => {
               <div key={profile.id} className='profile-card shadow'>
                 <div className='profile-header'>
                   <Image
+                    id='myimg'
                     className='profile-img shadow'
                     src={getUrl(profile.img)}
                     style={{
@@ -126,7 +126,9 @@ const Profiles = props => {
                     {profile.bio === undefined ? 'No bio' : profile.bio}
                   </Tab>
                   <Tab eventKey='likes' title='Likes' className='profile-body'>
-                    {profile.likes === undefined ? 'No likes' : profile.likes}
+                    {profile.likes === undefined 
+                      ? 'No likes' 
+                      : profile.likes}
                   </Tab>
                   <Tab
                     eventKey='dislikes'
@@ -151,12 +153,9 @@ const Profiles = props => {
                     title='Nicknames'
                     className='profile-body'
                   >
-                    {
-                      profile.nicknames
-                      // profile.nicknames.length === 0
-                      // ? 'No nicknames.'
-                      // : profile.nicknames
-                    }
+                    {profile.nicknames.length === undefined
+                      ? 'No nicknames.'
+                      : profile.nicknames}
                   </Tab>
                 </Tabs>
               </div>
