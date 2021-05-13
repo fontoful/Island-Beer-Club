@@ -14,15 +14,11 @@ export const loadProfiles = async (query = {}) => {
 
   let profiles = docsSnap.docs.map(doc => doc.data())
 
-  // ⬇ this logic is firing up when there is a search keyword
   if (search) {
     if (numbSearch) {
-      // this logic is firing up if the filter is a word
       const searchRegex = new RegExp(search, 'gi')
-      // We're now bullet-proofing our filter by first extracting only the profiles where the name property exists so this algorihtm doesn't break again
-      profiles = profiles.filter(profile => profile.name).filter(profile => profile.name.match(searchRegex))
+      profiles = profiles.filter(profile => profile.name.match(searchRegex))
     } else {
-      // this logic is firing up if the filter is a number
       profiles = profiles.filter(profile => profile.mbr === +search)
     }
   }
@@ -41,4 +37,4 @@ async (req, res) => {
 
 const storage = firebase.storage()
 const storageRef = storage.ref()
-export {storageRef}
+export { storageRef }
