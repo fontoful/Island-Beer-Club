@@ -3,7 +3,6 @@ import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 import Modal from 'react-bootstrap/Modal'
 
 const NeilsonModal = (props) => {
-
     return (
       <Modal
         {...props}
