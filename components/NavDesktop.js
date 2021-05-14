@@ -16,12 +16,12 @@ const NavDesktop = (props) => {
             width='125'
             height='60'
             className='d-inline-block align-top'
-            alt='React Bootstrap logo'
+            alt='IBC logo'
           />
         </Navbar.Brand>
           <Navigation />
         <Nav className='flex-shrink justify-content-end'>
-          <LinkElement activeClassName='nav-link-active' href='http://localhost:3001/' passHref>
+          <LinkElement activeClassName='nav-link-active' href='https://ibc-dashboard.vercel.app/' passHref>
             <Nav.Link className='mx-1'><FontAwesomeIcon icon={faUser} /></Nav.Link>
           </LinkElement>
           <LinkElement activeClassName='nav-link-active' href='#' passHref>

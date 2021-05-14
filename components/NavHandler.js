@@ -103,7 +103,7 @@ const NavHandler = props => {
           <Row className='d-flex flex-end w-100 py-0 m-0 bg-dark text-light'>
             <Col className='d-flex align-items-center justify-content-center border-top'>
               <FontAwesomeIcon icon={faUser} width='22' />
-              <LinkElement activeClassName='nav-link-active' href='/sign-in' passHref>
+              <LinkElement activeClassName='nav-link-active' href='https://ibc-dashboard.vercel.app/' passHref>
                 <Nav.Link className='text-light'>Login</Nav.Link>
               </LinkElement>
             </Col>
