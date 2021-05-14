@@ -153,7 +153,7 @@ const getUrl = pathToFile => {
                     title='Nicknames'
                     className='profile-body'
                   >
-                    {profile.nicknames.length === undefined
+                    {profile.nicknames === undefined
                       ? 'No nicknames.'
                       : profile.nicknames}
                   </Tab>
