@@ -22,7 +22,7 @@ const ProfileCard = ({ storage, currentProfiles}) => {
   return (
     <>
       <h1>A Profile Card Component</h1>
-      {newMappedProfiles.map(profile => (
+      {users.map(profile => (
         <p>{profile.name}</p>
       ))}
       
