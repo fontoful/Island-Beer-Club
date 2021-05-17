@@ -1,31 +1,36 @@
-global.XMLHttpRequest = require("xhr2");
+// global.XMLHttpRequest = require("xhr2");
 import React, { useEffect, useReducer, useState } from 'react'
 import Image from 'next/image'
 
-const ProfileCard = ({ storage, currentProfiles}) => {
+const ProfileCard = ({ storage, currentProfiles }) => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    const newMappedProfiles = []
-    // this is firing up when the component mounts
-    currentProfiles.forEach(async doc => {
-          const { img } = doc
-          const storageRef = storage.ref()
-          const fileRef = storageRef.child(img)
-          const fullUrl = await fileRef.getDownloadURL()
-          newMappedProfiles.push({...doc, img: fullUrl})
-    })
+    const resultingArr = Promise.all(
+      currentProfiles.map(async profile => {
+        const { img } = profile
+        const fullUrl = await storage.ref().child(img).getDownloadURL()
 
-    setUsers(newMappedProfiles)
+        return { ...profile, img: fullUrl }
+      }),
+    )
+
+    resultingArr.then(data => setUsers(data))
   }, [])
+
+  console.log(users)
 
   return (
     <>
       <h1>A Profile Card Component</h1>
-      {users.map(profile => (
-        <p>{profile.name}</p>
-      ))}
-      
+      {users &&
+        users.length > 0 &&
+        users.map((profile, idx) => (
+          <div key={idx}>
+            <img src={profile.img} />
+            <p>{profile.name}</p>
+          </div>
+        ))}
     </>
   )
 }
