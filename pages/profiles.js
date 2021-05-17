@@ -1,22 +1,13 @@
 import React, { useState } from 'react'
 import { useRouter, } from 'next/router'
+import { storage } from '../lib/firebase'
 import { loadProfiles } from './api/profiles'
 import getNotificationData from './api/notifications'
 import Head from 'next/head'
 import Footer from '../components/Footer'
 import NavHandler from '../components/NavHandler'
 import PaginationReact from '../components/PaginationReact'
-import {
-  Button,
-  Col,
-  Container,
-  Form,
-  Image,
-  Jumbotron,
-  Row,
-  Tab,
-  Tabs,
-} from 'react-bootstrap'
+import { Button, Col, Container, Form, Image, Jumbotron, Row, Tab, Tabs, } from 'react-bootstrap'
 
 const Profiles = props => {
   const router = useRouter()
@@ -24,16 +15,17 @@ const Profiles = props => {
   const [notificationData, setNotifications] = useState(props.notificationData)
   const [currentPage, setCurrentPage] = useState(1)
   const [profilesPerPage] = useState(10)
+  const storageRef = storage.ref()
 
   // fetch profile images
-const getUrl = pathToFile => {
-  let fbStorage = 'https://firebasestorage.googleapis.com/v0/b/'
-  let bucket = 'island-beer-club.appspot.com'
-  let silhouette = 'resources/SilhouetteM100.png'
-  let img = pathToFile === undefined ? silhouette : pathToFile
-  let downloadToken = `?alt=media&token=${1}`
-  return `${fbStorage}${bucket}/o/${encodeURIComponent(img)}${downloadToken}`
-}
+  const getUrl = pathToFile => {
+    let fbStorage = 'https://firebasestorage.googleapis.com/v0/b/'
+    let bucket = 'island-beer-club.appspot.com'
+    let silhouette = 'resources/SilhouetteM100.png'
+    let img = pathToFile === undefined ? silhouette : pathToFile
+    let downloadToken = `?alt=media&token=${1}`
+    return `${fbStorage}${bucket}/o/${encodeURIComponent(img)}${downloadToken}`
+  }
 
   //! Logic for the pagination
   const indexOfLastProfile = currentPage * profilesPerPage
@@ -42,6 +34,7 @@ const getUrl = pathToFile => {
     indexOfFirstProfile,
     indexOfLastProfile,
   )
+
   // cutting the Array
   const handleFormSubmit = async e => {
     e.preventDefault()
@@ -90,7 +83,7 @@ const getUrl = pathToFile => {
                 placeholder='Name, MBR#'
                 defaultValue={router.query.search}
               />
-              <Button type='submit' size='lg' variant='secondary'>
+              <Button type='submit' size='lg' letiant='secondary'>
                 Search
               </Button>
             </Form>
@@ -102,7 +95,6 @@ const getUrl = pathToFile => {
               <div key={profile.id} className='profile-card shadow'>
                 <div className='profile-header'>
                   <Image
-                    id='myimg'
                     className='profile-img shadow'
                     src={getUrl(profile.img)}
                     style={{
@@ -126,8 +118,8 @@ const getUrl = pathToFile => {
                     {profile.bio === undefined ? 'No bio' : profile.bio}
                   </Tab>
                   <Tab eventKey='likes' title='Likes' className='profile-body'>
-                    {profile.likes === undefined 
-                      ? 'No likes' 
+                    {profile.likes === undefined
+                      ? 'No likes'
                       : profile.likes}
                   </Tab>
                   <Tab

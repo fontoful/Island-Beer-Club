@@ -7,7 +7,7 @@ export const loadProfiles = async (query = {}) => {
 
   let docsSnap = await firebase
     .firestore()
-    .collection('user-data')
+    .collection('user-test-data')
     //.where('is_member', '==', 'true')
     .orderBy('mbr', 'asc')
     .get()

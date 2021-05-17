@@ -29,6 +29,7 @@
     "react-modal": "^3.12.1",
     "react-text-mask": "^5.4.3",
     "sass": "^1.29.0",
-    "sweetalert2": "^10.12.5"
+    "sweetalert2": "^10.12.5",
+    "xhr2": "^0.2.1"
   }
 }
