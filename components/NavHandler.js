@@ -110,7 +110,6 @@ const NavHandler = props => {
           </Row>
         </Modal>
       </div>
-
       <div className='d-none d-lg-block bg-dark bg-warning' style={{ height: '78px' }}>
         <NavDesktop />
       </div>

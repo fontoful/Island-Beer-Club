@@ -11,7 +11,7 @@ const Navigation = (props) => (
         <LinkElement activeClassName='nav-link-active' href='/history' passHref>
           <Nav.Link>History</Nav.Link>
         </LinkElement>
-        <LinkElement activeClassName='nav-link-active' href='/profiles' passHref>
+        <LinkElement activeClassName='nav-link-active' href='/profilesPage' passHref>
           <Nav.Link>Profiles</Nav.Link>
         </LinkElement>
         <LinkElement activeClassName='nav-link-active' href='/foundersDayPage' passHref>
