@@ -19,6 +19,8 @@ const MemberRegistration = props => {
       .add({
         ...data,
         is_member: false,
+        img: `resources/${data.lastName}.jpg`,
+        name: `${data.firstName} ${data.lastName}`,
       })
       .then(() => {
         console.log('document was successfully written')
@@ -129,7 +131,7 @@ const MemberRegistration = props => {
                     placeholder='Phone Number'
                     guide={false}
                     id='my-input-id'
-                    onBlur={() => { }}
+                    onBlur={() => {}}
                     onChange={() => {
                       // const saveItem = localStorage.setItem(defaultValue)
                     }}
@@ -150,7 +152,8 @@ const MemberRegistration = props => {
                     ref={register({
                       required: true,
                       maxLength: 40,
-                      pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      pattern:
+                        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                     })}
                   />
                 </div>
@@ -189,13 +192,13 @@ const MemberRegistration = props => {
                     type='text'
                     name='bio'
                     ref={register({
-                      required: true
+                      required: true,
                     })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
-              <div className='error-box'>
+                <div className='error-box'>
                   {errors.likes && (
                     <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
                   )}
@@ -207,13 +210,13 @@ const MemberRegistration = props => {
                     type='text'
                     name='likes'
                     ref={register({
-                      required: true
+                      required: true,
                     })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
-              <div className='error-box'>
+                <div className='error-box'>
                   {errors.dislikes && (
                     <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
                   )}
@@ -225,13 +228,13 @@ const MemberRegistration = props => {
                     type='text'
                     name='dislikes'
                     ref={register({
-                      required: true
+                      required: true,
                     })}
                   />
                 </div>
               </div>
               <div className='member-reg-row pt-4 w-85'>
-              <div className='error-box'>
+                <div className='error-box'>
                   {errors.hobbies && (
                     <FontAwesomeIcon icon={faExclamationCircle} size='2x' />
                   )}
@@ -243,7 +246,7 @@ const MemberRegistration = props => {
                     type='text'
                     name='hobbies'
                     ref={register({
-                      required: true
+                      required: true,
                     })}
                   />
                 </div>
