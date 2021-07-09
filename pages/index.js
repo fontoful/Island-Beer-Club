@@ -12,14 +12,10 @@ import {
 	ResponsiveEmbed,
 	Image,
 	Button,
-	Col,
-	Card,
-	CardGroup,
+	Col, Card, CardGroup,
 } from 'react-bootstrap'
 
 const Home = ({notificationData}) => {
-
-	const notifications = notificationData
 
 	return (
 		<>
@@ -44,11 +40,11 @@ const Home = ({notificationData}) => {
 				</Row>
 				<Row className='mt-2'>
 					<Col lg={6} xs={12} className='d-flex flex-column align-items-center'>
-						<FontAwesomeIcon icon={faBeer} size='4x' />
+						<FontAwesomeIcon icon={faBeer} height='150px' />
 						<p> We are a bunch of guys who grew up together and love beer. We've all gone off to school, have had successful careers and, in our later life, returned to our home town to reunite and share experiences. We're posting this site to communicate and coordinate with our numerous members worldwide and with potential members wherever they may be. This is for our amusement and entertainment. If you like it please return.</p>
 					</Col>
 					<Col lg={6} xs={12} className='d-flex flex-column align-items-center'>
-						<FontAwesomeIcon icon={faUserFriends} size='4x' />
+						<FontAwesomeIcon icon={faUserFriends} height='150px'/>
 						<p>The IBC is a focal point of merriment and community outreach. The IBC meets every Wednesday from 4 PM to 6 PM (Standard Time); 4:30 PM to 6:30 PM (Daylight Savings Time) in the alley (Beer Belly Blvd) on J Avenue in Coronado. Guests, especially ladies, are always welcome when accompanied by a Beer Club member. Please join us.</p>
 					</Col>
 				</Row>
